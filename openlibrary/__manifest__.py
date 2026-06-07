@@ -25,7 +25,7 @@ Features:
     'application': True,
     'auto_install': False,
     'icon': 'openlibrary/static/description/icon.png',  
-    'images': ['static/description/banner.png','static/description/screenshot_books.png','static/description/screenshot_kanban.png','static/description/screenshot_lending.png','static/description/screenshot_members.png'],
+    'images': ['static/description/banner.jpg','static/description/screenshot_books.png','static/description/screenshot_kanban.png','static/description/screenshot_lending.png','static/description/screenshot_members.png'],
     'maintainer': 'Madjid Nasiri',
     'contributors': ['Madjid Nasiri'],
     'license': 'LGPL-3',
