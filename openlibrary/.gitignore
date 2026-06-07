@@ -1,0 +1,8 @@
+"__pycache__/"
+"controllers/__pycache__"
+"models/__pycache__"
+"*.pyc" 
+"*.pyo" 
+"*.pyd"
+".Python"
+"*.so"

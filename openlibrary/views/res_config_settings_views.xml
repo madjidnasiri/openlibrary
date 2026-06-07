@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.openlibrary</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="50"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Book Library" string="Book Library" name="library" logo="/openlibrary/static/description/icon.png">
+                    <block title="Open Library Settings" name="open_libraryfiscal_localization_setting_container" >
+                        <setting string="Delay Localization" company_dependent="0" >
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <div>
+                                        <label for="delay_warning_threshold">Warning Delay Threshold (Days)</label>
+                                        <field name="delay_warning_threshold" class="form-control"/>
+                                        <small class="text-muted">
+                                            If days late is less than or equal to this, status is 'Minor Delay'
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="mt16">
+                                    <div>
+                                        <label for="delay_suspicious_threshold">Suspicious Delay Threshold (Days)</label>
+                                        <field name="delay_suspicious_threshold" class="form-control"/>
+                                        <small class="text-muted">
+                                            If days late exceeds this, status is 'Dangerous Delay'
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>         
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,128 @@
+<odoo>
+    <data>
+        <template id="index">
+          <h1>Authors</h1>        
+          <t t-foreach="objects" t-as="object">
+            <p><t t-esc="object"/></p>
+          </t>
+        </template>
+
+        <template id="author_index">
+          <title>Authors</title>
+          <h1>Authors</h1>
+          <hr/>
+          <ul>
+          <li t-foreach="authors" t-as="author">
+            <t t-esc="author"/>
+          </li>
+          </ul>
+          <hr/>
+        </template>
+
+        <template id="ws_author_list">
+          <t t-call="website.layout">
+            <t t-set="title" t-value="Authors"/>
+              <hr/>
+              <div class="oe_structure">
+                <div class="container">
+                  <t t-if="authors">
+                    <t t-foreach="authors" t-as="author">
+                      <p>
+                        <t t-esc="author.id"/> |
+                        <snap>
+                        <a t-attf-href="/ol/author/{{ slug(author) }}">
+                         <t t-esc="author.name"/> <t t-esc="author.family"/>
+                        </a>
+                        </snap>
+                      </p>
+                    </t>
+                  </t>
+                  <t t-else="">
+                    <p>No Record Found</p>
+                  </t>
+                </div>
+              </div>
+              <hr/>
+          </t>
+
+          <!-- <ul>
+            <li t-foreach="authors" t-as="author">
+              <t t-esc="author.name"/> <t t-esc="author.family"/>
+            </li>
+          </ul> -->
+        </template>
+
+        <template id="ws_author_view">
+          <t t-call="website.layout">
+            <title>Authors</title>
+            <t t-set="title" t-value="Author" />
+            <hr/>
+              <div class="oe_structure">
+                <div class="container">
+                  <h3><span t-field="author.name"/> <span t-field="author.family"/></h3>
+                  <hr/>
+                  <h4>ID: <span t-field="author.id"/></h4><p>Last Modify: <i t-field="author.write_date" t-options="{'format': 'long'}"/></p>
+                  <span t-field="author.biography"/>
+                </div>
+              </div>
+            <hr/>
+          </t>
+        </template>
+
+        <template id="book_list">
+          <t t-set="title" t-value="Books"/>
+          <hr/>
+            <div class="oe_structure">
+              <div class="container">
+                <t t-if="books">
+                  <t t-foreach="books" t-as="book">
+                    <p>
+                      <t t-esc="book.id"/> |
+                      <snap>
+                      <a t-attf-href="/ol/author/{{ slug(author) }}">
+                        <t t-esc="author.name"/> <t t-esc="author.family"/>
+                      </a>
+                      </snap>
+                    </p>
+                  </t>
+                </t>
+                <t t-else="">
+                  <p>No Record Found</p>
+                </t>
+              </div>
+            </div>
+            <hr/>
+        </template>
+
+        <template id="listing_books">
+          <ul>
+            <li t-foreach="books" t-as="book">
+              <a t-attf-href="#{ root }/books/#{ book.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+
+<!--
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+-->
+    </data>
+</odoo>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View openlibrary.lend View List -->
+    <record id="view_openlibrary_lend_list" model="ir.ui.view">
+        <field name="name">view.openlibrary.lend.list</field>
+        <field name="model">openlibrary.lend</field>
+        <field name="arch" type="xml">
+            
+            <list 
+                    decoration-info="status == 'free'"
+                    decoration-success="status == 'lent'"
+                    decoration-warning="status == 'delay'"
+                    decoration-danger="status == 'suspicious'"
+                    decoration-primary="status == 'dangerous'"
+                    decoration-bf="status in ['delay','suspicious','dangerous']"
+                create="false" edit="false" delete="false">
+                <header>
+                    <button name="action_recompute_status" 
+                            string="Recompute Fields" 
+                            type="object" 
+                            class="btn-secondary"
+                            confirm="Are you sure you want to recalculate all computed fields?"/>
+                </header>
+                <field name="status" widget="badge" class="text-center"
+                        decoration-info="status == 'free'"
+                        decoration-success="status == 'lent'"
+                        decoration-warning="status == 'delay'"
+                        decoration-danger="status == 'suspicious'"
+                        decoration-primary="status == 'dangerous'"/>
+                <field name="library_id" />
+                <field name="book_repo_id"/>
+                <field name="subscriber_id" />
+                <field name="start_date" />
+                <field name="due_date" />
+                <field name="days_late" />
+                <field name="return_date" />
+                <field name="subscriber_due_day"/>
+                <field name="repository_id" />
+                <field name="book_id" />
+                
+            </list>
+        </field>
+    </record>
+
+    <record id="view_openlibrary_lend_kanban" model="ir.ui.view">
+        <field name="name">view.openlibrary.lend.list</field>
+        <field name="model">openlibrary.lend</field>
+        <field name="arch" type="xml">
+            <kanban create="false" edit="false" delete="false"
+                    default_group_by="status_sequence" 
+                    class="o_kanban_mobile">
+                <field name="status_sequence"/>
+                <field name="status"/>
+                  <templates>
+                    <t t-name="card" >
+                        <div class="oe_kanban_card">
+                            <field name="status" />
+                            <h3><field name="book_repo_id" /></h3>
+                            <group>
+                            
+                            <field name="subscriber_id" /><br/>
+                            <field name="library_id" /><br/>
+                            <field name="start_date" /><br/>
+                            </group>
+                            <div > <!-- class="o_kanban_record_bottom mt-1" -->
+                                <t t-if="status == 'lent'">
+                                    <span class="badge badge-primary">lended</span>
+                                </t>
+                                <t t-if="status == 'delay'">
+                                    <span class="badge badge-warning">Overdue</span>
+                                </t>
+                                <t t-if="status == 'suspicious'">
+                                    <span class="badge badge-danger">Double Overdue</span>
+                                </t>
+                                <t t-if="status == 'dangerous'">
+                                    <span class="badge badge-danger">Double Overdue</span>
+                                </t>
+                                <t t-if="status == 'free'">
+                                    <span class="badge badge-success">Returned</span>
+                                </t>
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+  
+    <!-- View openlibrary.lend form -->
+    <record id="view_openlibrary_lend_form" model="ir.ui.view">
+        <field name="name">view.openlibrary.lend.form</field>
+        <field name="model">openlibrary.lend</field>
+        <field name="arch" type="xml">
+            <form string="Lents" create="false" duplicate="false" edit="false">
+                <sheet>
+                    <group>
+                        <field name="status" />
+                        <field name="library_id" />
+                        <field name="book_repo_id" domain="[('repository_id.library_id', '=', library_id)]" />
+                        <field name="subscriber_id" domain="[('membership_ids.library_id', '=', library_id), ('membership_ids.status', 'in', ['active']),  ('membership_ids', 'not any', [('status', 'not in', ['active'])]) ]"/>
+                        <field name="start_date" />
+                        <field name="due_date" />
+                        <field name="return_date" />
+                        <field name="days_late" />
+                        <field name="subscriber_due_day"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Close" special="cancel" class="btn-primary"/> 
+                    <button name="button_return_book" string="Return" type="object" class="btn-warning" invisible="status == 'free'"  context="{'return_source': 'form'}"/>
+
+                    <button name="action_recompute_status" 
+                                string="Recompute Fields" 
+                                type="object" 
+                                class="btn-secondary"
+                                confirm="Are you sure you want to recalculate all computed fields?"/>
+                </footer>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_openlibrary_lend_calendar" model="ir.ui.view">
+        <field name="name">openlibrary.lend.view.calendar</field>
+        <field name="model">openlibrary.lend</field>
+        <field name="arch" type="xml">
+            <calendar string="lending Calender" date_start="start_date" date_stop="due_date" color="days_late" create="false" edit="false" delete="false">
+                <field name="library_id" />
+                <field name="book_repo_id"/>
+                <field name="subscriber_id" />
+                <field name="start_date" />
+                <field name="due_date" />
+            </calendar>
+        </field>
+    </record>
+
+    <!-- View openlibrary.lend search -->
+    <record id="view_openlibrary_lend_search" model="ir.ui.view">
+        <field name="name">view.openlibrary.lend.search</field>
+        <field name="model">openlibrary.lend</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="book_repo_id" 
+                    filter_domain="['|',('book_repo_id', 'ilike', self),('subscriber_id', 'ilike', self)]"
+                    string="Members and books"
+                />
+                <filter name="filter_delay" string="Delaies" domain="[('status','in', ['delay','suspicious','dangerous'])]"/>
+                <filter name="filter_lent" string="Lents" domain="[('status','=', 'lent')]"/>
+                <filter name="filter_old" string="Old Records" domain="[('status','=', 'free')]"/>
+                <filter name="active_lends" string="Active Lends" domain="[('status', '!=', 'free')]" help="Show only books that are not returned yet"/>
+                <separator/>
+                <filter name="yesterday_due" string="Day Late" domain="[('days_late', '>=', 1)]" />
+                <filter name="three_day_due" string="3 Days Late" domain="[('days_late', '>=', 4)]" />
+                <filter name="week_due" string="Week Late" domain="[('days_late', '>=', 8)]" />
+                <filter name="month_due" string="Month Late" domain="[('days_late', '>=', 31)]" />
+                <separator/>
+                <group>
+                    <filter name="group_by_status" string="Status" context="{'group_by': 'status'}"/>
+                    <filter name="group_by_status" string="Library" context="{'group_by': 'library_id'}"/>
+                    <filter name="group_by_status" string="Repository" context="{'group_by': 'repository_id'}"/>
+                    <filter name="group_by_status" string="Book" context="{'group_by': 'book_id'}"/>
+                </group>
+  
+            </search>
+        </field>
+    </record>
+
+    <!-- Action openlibrary.lend -->
+    <record id="action_openlibrary_lend" model="ir.actions.act_window">
+        <field name="name">Lents</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">openlibrary.lend</field>
+        <field name="view_mode">kanban,list,calendar,pivot,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_active_lends': 1}</field>
+        <field name="path">lents</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Openlibrary lend.
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

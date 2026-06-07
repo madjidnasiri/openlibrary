@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View openlibrary.library View List -->
+    <record id="view_openlibrary_library_list" model="ir.ui.view">
+        <field name="name">view.openlibrary.library.list</field>
+        <field name="model">openlibrary.library</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active" />
+                <field name="owner" />
+                <field name="responsible_user_id" />
+                <field name="company_id" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View openlibrary.library form -->
+    <record id="view_openlibrary_library_form" model="ir.ui.view">
+        <field name="name">view.openlibrary.library.form</field>
+        <field name="model">openlibrary.library</field>
+        <field name="arch" type="xml">
+            <form string="Libraries">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Name..."/></h1>
+                    </div>
+                    <group>
+                        <field name="active" />
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        <field name="address"/>
+                        <field name="owner" />
+                        <field name="responsible_user_id" />
+                    </group>
+                    <notebook>
+                        <page name="repository_page" string="Repositories">
+                            <field name="repository_ids">
+                                <list>
+                                    <field name="name" />
+                                    <field name="active" />
+                                    <field name="type" />
+                                </list>                               
+                                <form string="Openlibrary Repository">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="display_name" readonly="True"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <field name="name" placeholder="Name..."/>
+                                            <field name="library_id" readonly="True"/>
+                                            <field name="active" />
+                                            <field name="type" />
+                                        </group>
+                                        <notebook>
+                                            <page name="books" string="Books">
+                                                <field name="book_repo_ids">
+                                                    <list>
+                                                        <field name="code" />
+                                                        <field name="name" />
+                                                        <field name="purchase_price" />
+                                                    </list>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="memberships_page" string="Memberships">
+                            <field name="membership_ids">
+                                <list>
+                                    <field name="subscriber_id" />
+                                    <field name="status" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- View openlibrary.library search -->
+    <record id="view_openlibrary_library_search" model="ir.ui.view">
+        <field name="name">view.openlibrary.library.search</field>
+        <field name="model">openlibrary.library</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action openlibrary.library -->
+    <record id="action_openlibrary_library" model="ir.actions.act_window">
+        <field name="name">Libraries</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">openlibrary.library</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="path">libraries</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Openlibrary Library.
+            </p>
+        </field>
+    </record>
+</odoo>

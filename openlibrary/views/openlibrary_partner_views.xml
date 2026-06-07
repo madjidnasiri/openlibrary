@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- View openlibrary.partner form -->
+    <record id="view_openlibrary_partner_form_inh" model="ir.ui.view">
+        <field name="name">view.res.partner.form.inh</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page name="openlibrary_partner_page" string="Library">
+                    <field name="subscriber_id" string="Subscriber" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

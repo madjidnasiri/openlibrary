@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Library - Library Management System for Odoo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .screenshots {
+            margin: 40px 0;
+        }
+        .screenshots h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .screenshot-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .install-steps {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+        }
+        .compatibility {
+            background: #e8f4fd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📚 Open Library</h1>
+    <p>Complete Library Management System for Odoo</p>
+    <div class="compatibility">
+        <span class="badge">Version 1.0.0</span>
+        <span class="badge">LGPL-3</span>
+        <span class="badge">Community & Enterprise</span>
+    </div>
+</div>
+
+<!-- ==================== Overview ==================== -->
+<section>
+    <h2>📖 Overview</h2>
+    <p><strong>Open Library</strong> is a professional library management module for Odoo 19 that helps libraries, schools, universities, and organizations manage their book collections, members, and lending operations efficiently. The module provides a complete workflow from book acquisition to member registration and lending tracking.</p>
+</section>
+
+<!-- ==================== Features ==================== -->
+<section>
+    <h2>✨ Key Features</h2>
+    <div class="features">
+        
+        <div class="feature-card">
+            <h3>📚 Book Management</h3>
+            <ul>
+                <li>Multi-library support</li>
+                <li>Multi-repository support</li>
+                <li>Book and author management</li>
+                <li>Book editions tracking</li>
+                <li>Publisher management</li>
+                <li>Tags & genres categorization</li>
+                <li>Unique book copy codes</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3>👥 Member Management</h3>
+            <ul>
+                <li>Member registration</li>
+                <li>Membership tracking</li>
+                <li>Automatic age calculation</li>
+                <li>Member status management</li>
+                <li>Contact integration</li>
+                <li>Multi-library memberships</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔄 Lending Operations</h3>
+            <ul>
+                <li>Easy book borrowing</li>
+                <li>Automatic due date calculation</li>
+                <li>Return processing with late fees</li>
+                <li>Configurable delay thresholds</li>
+                <li>Complete lending history</li>
+                <li>Real-time status tracking</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3>📊 Views & Dashboards</h3>
+            <ul>
+                <li>List, Kanban & Calendar views</li>
+                <li>Advanced search filters</li>
+                <li>Detailed form views</li>
+                <li>Comprehensive reports</li>
+                <li>Activity tracking</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔧 Technical Features</h3>
+            <ul>
+                <li>Multi-company support</li>
+                <li>Granular security groups</li>
+                <li>Configurable system parameters</li>
+                <li>Mail & activity integration</li>
+                <li>Full API access</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3>🌍 Languages</h3>
+            <ul>
+                <li>English (default)</li>
+                <li>Persian / Farsi (فارسی)</li>
+                <li>Easily translatable to other languages</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== User Groups ==================== -->
+<section>
+    <h2>👥 User Groups & Access Rights</h2>
+    <div class="features">
+        <div class="feature-card">
+            <h3>📖 Library User</h3>
+            <p>Basic read-only access to view books and lending records.</p>
+            <small><strong>Perms:</strong> Read only</small>
+        </div>
+        <div class="feature-card">
+            <h3>🔧 Library Employee</h3>
+            <p>Operational access for daily library tasks.</p>
+            <small><strong>Perms:</strong> Create, edit, process lending</small>
+        </div>
+        <div class="feature-card">
+            <h3>⭐ Library Manager</h3>
+            <p>Full access to all features within a library.</p>
+            <small><strong>Perms:</strong> Complete control</small>
+        </div>
+        <div class="feature-card">
+            <h3>🏢 Libraries Director</h3>
+            <p>Executive access across all libraries and companies.</p>
+            <small><strong>Perms:</strong> Multi-library oversight</small>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== Installation ==================== -->
+<section class="install-steps">
+    <h2>🚀 Installation</h2>
+    
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Odoo 19.0 (Community or Enterprise)</li>
+        <li>Python 3.10 or higher</li>
+    </ul>
+
+    <h3>Installation Steps</h3>
+    <ol>
+        <li>Copy the module to your addons directory:</li>
+        <div class="code-block">
+            <code>cp -r openlibrary /path/to/odoo/addons/</code>
+        </div>
+        
+        <li>Update the module list in Odoo (Apps → Update Modules List)</li>
+        <li>Search for "Open Library" and click Install</li>
+    </ol>
+
+    <h3>Demo Data Installation</h3>
+    <div class="code-block">
+        <code>odoo-bin -c odoo.conf -d your_database -i openlibrary --demo=all</code>
+    </div>
+</section>
+
+<!-- ==================== Configuration ==================== -->
+<section>
+    <h2>⚙️ Configuration</h2>
+    <p>After installation, configure the module:</p>
+    <ol>
+        <li>Go to <strong>Settings → Open Library → Settings</strong></li>
+        <li>Configure delay thresholds:
+            <ul>
+                <li><strong>Warning Delay Threshold:</strong> Days after which a book is considered "Delayed" (default: 3)</li>
+                <li><strong>Suspicious Delay Threshold:</strong> Days after which status becomes "Suspicious" (default: 30)</li>
+            </ul>
+        </li>
+        <li>Assign user groups to your staff members</li>
+    </ol>
+</section>
+
+<!-- ==================== Usage Guide ==================== -->
+<section>
+    <h2>📖 Usage Guide</h2>
+    
+    <h3>📕 Adding Books</h3>
+    <ol>
+        <li>Go to <strong>Open Library → Books</strong></li>
+        <li>Click <strong>Create</strong></li>
+        <li>Fill in book information (Title, Author, Publisher, ISBN, Tags, Summary)</li>
+        <li>Save the record</li>
+    </ol>
+
+    <h3>📝 Registering Members</h3>
+    <ol>
+        <li>Go to <strong>Open Library → Subscribers</strong></li>
+        <li>Click <strong>Create</strong></li>
+        <li>Enter member information (Name, Birthday, Contact details)</li>
+        <li>Save the record (age is automatically calculated)</li>
+    </ol>
+
+    <h3>🔄 Processing Lending</h3>
+    <ol>
+        <li>Go to <strong>Open Library → Lending</strong></li>
+        <li>Click <strong>Lend</strong></li>
+        <li>Select book copy and subscriber</li>
+        <li>Due date is automatically calculated based on member's allowed days</li>
+        <li>Click <strong>Confirm</strong></li>
+    </ol>
+
+    <h3>📬 Processing Returns</h3>
+    <ol>
+        <li>Go to <strong>Open Library → Lending</strong></li>
+        <li>Find the active lend record</li>
+        <li>Click <strong>Return</strong></li>
+        <li>The system automatically calculates delay days and updates book status</li>
+    </ol>
+</section>
+
+<!-- ==================== Screenshots ==================== -->
+<section class="screenshots">
+    <h2>📸 Screenshots</h2>
+    <div class="screenshot-gallery">
+        <img src="screenshot_books.png" alt="Books Management View" title="Books Management View">
+        <img src="screenshot_lending.png" alt="Lending Operations" title="Lending Operations">
+        <img src="screenshot_kanban.png" alt="Kanban View" title="Kanban View">
+        <img src="screenshot_members.png" alt="Member Management" title="Member Management">
+    </div>
+    <p style="text-align: center; color: #7f8c8d; margin-top: 10px;">
+        <em>Screenshots will appear here after adding images to static/description/</em>
+    </p>
+</section>
+
+<!-- ==================== Support ==================== -->
+<section class="install-steps">
+    <h2>📞 Support</h2>
+    
+    <h3>🐛 Issues & Bug Reports</h3>
+    <p>Please report issues on GitHub: <a href="https://github.com/madjidnasiri/openlibrary">github.com/madjidnasiri/openlibrary</a></p>
+
+    <h3>💬 Community Support</h3>
+    <p>Join the Odoo Community Association (OCA) for community support.</p>
+
+    <h3>📧 Commercial Support</h3>
+    <p>For professional support, custom development, or implementation assistance:</p>
+    <ul>
+        <li>Email: <strong>madjidnasiri@gmail.com</strong></li>
+        <li>Website: <strong>www.afsannama.ir</strong></li>
+    </ul>
+</section>
+
+<!-- ==================== License ==================== -->
+<section class="install-steps">
+    <h2>📄 License</h2>
+    <p><strong>GNU Lesser General Public License v3 (LGPL-3)</strong></p>
+    <p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+    <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</p>
+</section>
+
+<!-- ==================== Changelog ==================== -->
+<section>
+    <h2>📝 Changelog</h2>
+    <div class="install-steps">
+        <h3>Version 1.0.0 (2026-06-06)</h3>
+        <ul>
+            <li>Initial release for Odoo 19</li>
+            <li>Complete library management features</li>
+            <li>Multi-library and multi-company support</li>
+            <li>Full Persian (Farsi) translation</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== Footer ==================== -->
+<div class="footer">
+    <p><strong>Open Library</strong> - Empowering libraries with Odoo</p>
+    <p>Developed with ❤️ for the Odoo Community</p>
+    <p>© 2026 | Open Source under LGPL-3 License</p>
+</div>
+
+</body>
+</html>

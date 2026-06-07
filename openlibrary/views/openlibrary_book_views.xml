@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View openlibrary.book View List -->
+    <record id="view_openlibrary_book_list" model="ir.ui.view">
+        <field name="name">view.openlibrary.book.list</field>
+        <field name="model">openlibrary.book</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="title"/>
+                <field name="subtitle"/>
+                <field name="author_ids" widget="many2many_tags" options="{'limit': 3, 'create': False}"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'limit': 7}" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View openlibrary.book form -->
+    <record id="view_openlibrary_book_form" model="ir.ui.view">
+        <field name="name">view.openlibrary.book.form</field>
+        <field name="model">openlibrary.book</field>
+        <field name="arch" type="xml">
+            <form string="Books">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="title"/>
+                        <h1>
+                            <field name="title" placeholder="Title..."/>
+                        </h1>
+                    </div>
+                    <group >
+                        <field name="subtitle"/>
+                        <field name="tag_ids" widget="many2many_tags" />
+                    </group>
+
+                    <notebook>
+                        <page name="summary_book" string="Summary">
+                            <field name="summary" />
+                        </page>
+                        <page name="authors_book" string="Authors">
+                            <field name="author_ids" />
+                        </page>
+                        <page name="editions_book" string="Prints">
+                            <field name="book_edition_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="publish_date"  />
+                                    <field name="price" />
+                                </list>
+                                <form>
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name"/>
+                                            <h1>
+                                                <field name="name" placeholder="Name..."/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <field name="description" string="Description" />
+                                            <!-- <field name="book_id" string="Book" /> -->
+                                            <field name="publisher_id" string="Publisher"/>
+                                            <field name="publish_date" eval="time.strftime('%Y-%m-%d')" />
+                                            <field name="price" eval="0.0" />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- View openlibrary.book search -->
+    <record id="view_openlibrary_book_search" model="ir.ui.view">
+        <field name="name">view.openlibrary.book.search</field>
+        <field name="model">openlibrary.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title"/>
+                <field name="subtitle"/>
+                <field name="summary"/>
+                <!-- <group expand="1" string="Group By">
+                    <filter string="Title" name="title" domain="[]" context="{'group_by':'title'}"/>
+                </group>  -->
+            </search>
+        </field>
+    </record>
+
+    <!-- Action openlibrary.book -->
+    <record id="action_openlibrary_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">openlibrary.book</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="path">books</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Openlibrary Book.
+            </p>
+        </field>
+    </record>
+</odoo>

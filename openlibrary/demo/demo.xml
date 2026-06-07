@@ -1,0 +1,1844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data  noupdate="1">
+        <!-- Library -->
+        <record id="lib_main" model="openlibrary.library">
+            <field name="name">Main Library</field>
+            <field name="address">Main Street</field>
+            <field name="owner">All People</field>
+            <field name="active">True</field></record>
+        <record id="lib_city" model="openlibrary.library">
+            <field name="name">City Library</field>
+            <field name="address">City Hall</field>
+            <field name="owner">City</field>
+            <field name="active">True</field></record>
+
+        <!-- Repository -->
+        <record id="lib_main_repository" model="openlibrary.repository">
+            <field name="name">Repository</field>
+            <field name="library_id" ref="lib_main"/>
+            <field name="type">1</field>
+            <field name="active">True</field></record>
+        <record id="lib_main_depository" model="openlibrary.repository">
+            <field name="name">Depository</field>
+            <field name="library_id" ref="lib_main"/>
+            <field name="type">2</field>
+            <field name="active">True</field></record>
+        <record id="lib_main_archive" model="openlibrary.repository">
+            <field name="name">Archive Repository</field>
+            <field name="library_id" ref="lib_main"/>
+            <field name="type">8</field>
+            <field name="active">True</field></record>
+        <record id="lib_main_reference" model="openlibrary.repository">
+            <field name="name">Reference Repository</field>
+            <field name="library_id" ref="lib_main"/>
+            <field name="type">3</field>
+            <field name="active">True</field></record>
+
+        <record id="city_repository" model="openlibrary.repository">
+            <field name="name">Repository</field>
+            <field name="library_id" ref="lib_city"/>
+            <field name="type">1</field>
+            <field name="active">True</field></record>
+        <record id="city_archive" model="openlibrary.repository">
+            <field name="name">Archive</field>
+            <field name="library_id" ref="lib_city"/>
+            <field name="type">8</field>
+            <field name="active">True</field></record>
+
+        <!-- Publishers -->
+        <record id="publisher_penguin" model="openlibrary.publisher">
+            <field name="name">Penguin Random House</field></record>
+        <record id="publisher_hachette" model="openlibrary.publisher">
+            <field name="name">Hachette Livre</field></record>
+        <record id="publisher_harper" model="openlibrary.publisher">
+            <field name="name">HarperCollins</field></record>
+        <record id="publisher_simon" model="openlibrary.publisher">
+            <field name="name">Simon &amp; Schuster</field></record>
+        <record id="publisher_macmillan" model="openlibrary.publisher">
+            <field name="name">Macmillan</field></record>
+        <record id="publisher_nature" model="openlibrary.publisher">
+            <field name="name">Springer Nature</field></record>
+        <record id="publisher_elsevier" model="openlibrary.publisher">
+            <field name="name">Elsevier</field></record>
+        <record id="publisher_wiley" model="openlibrary.publisher">
+            <field name="name">Wiley</field></record>
+
+        <!-- Tags -->
+        <record id="tag_novel" model="openlibrary.tag">
+            <field name="name">Novel</field></record>
+        <record id="tag_technical_books" model="openlibrary.tag">
+            <field name="name">Technical Books</field></record>
+        <record id="tag_humor" model="openlibrary.tag">
+            <field name="name">Humor</field></record>
+        <record id="tag_poetry" model="openlibrary.tag">
+            <field name="name">Poetry</field></record>
+        <record id="tag_history" model="openlibrary.tag">
+            <field name="name">History</field></record>
+        <record id="tag_geography" model="openlibrary.tag">
+            <field name="name">Geography</field></record>
+        <record id="tag_art" model="openlibrary.tag">
+            <field name="name">Art</field></record>
+        <record id="tag_literature" model="openlibrary.tag">
+            <field name="name">Literature</field></record>
+        <record id="tag_criticism" model="openlibrary.tag">
+            <field name="name">Criticism</field></record>
+        <record id="tag_fantasy" model="openlibrary.tag">
+            <field name="name">Fantasy</field></record>
+        <record id="tag_science_fiction" model="openlibrary.tag">
+            <field name="name">Science Fiction</field></record>
+        <record id="tag_crime" model="openlibrary.tag">
+            <field name="name">Crime</field></record>
+        <record id="tag_travelogue" model="openlibrary.tag">
+            <field name="name">Travelogue</field></record>
+        <record id="tag_short_stories" model="openlibrary.tag">
+            <field name="name">Short Stories</field></record>
+        <record id="tag_classics" model="openlibrary.tag">
+            <field name="name">Classics</field></record>
+        <record id="tag_biology" model="openlibrary.tag">
+            <field name="name">Biology</field></record>
+        <record id="tag_astronomy" model="openlibrary.tag">
+            <field name="name">Astronomy</field></record>
+        <record id="tag_geology" model="openlibrary.tag">
+            <field name="name">Geology</field></record>
+        <record id="tag_computers" model="openlibrary.tag">
+            <field name="name">Computers</field></record>
+        <record id="tag_programming" model="openlibrary.tag">
+            <field name="name">Programming</field></record>
+        <record id="tag_horror" model="openlibrary.tag">
+            <field name="name">Horror</field></record>
+        <record id="tag_adventure" model="openlibrary.tag">
+            <field name="name">Adventure</field></record>
+        <record id="tag_teens" model="openlibrary.tag">
+            <field name="name">Teens</field></record>
+        <record id="tag_children" model="openlibrary.tag">
+            <field name="name">Children</field></record>
+        <record id="tag_romance" model="openlibrary.tag">
+            <field name="name">Romance</field></record>
+
+        <!-- Authors -->
+        <!-- 1. Mark Twain -->
+        <record id="author_Mark_Twain" model="openlibrary.author">
+            <field name="name">Samuel Langhorne Clemens</field>
+            <field name="pseudonym">Mark Twain</field>
+            <field name="nationality_id" search="[('code', '=', 'US')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1835-11-30</field>
+            <field name="dieddate">1910-04-21</field>
+            <field name="biography">
+            <![CDATA[
+<p><b>Mark Twain</b> (born Samuel Langhorne Clemens, November 30, 1835 - April 21, 1910) was an American writer, humorist, and essayist. 
+He was praised as the "greatest humorist the United States has produced," with William Faulkner calling him "the father of American literature."</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Adventures of Tom Sawyer (1876)</li>
+    <li>Adventures of Huckleberry Finn (1884)</li>
+    <li>A Connecticut Yankee in King Arthur's Court (1889)</li>
+    <li>The Prince and the Pauper (1881)</li>
+    <li>Life on the Mississippi (1883)</li>
+</ul>             
+            ]]>
+            </field>
+        </record>
+        <!-- 1. مارک تواین (Mark Twain) -->
+        <record id="author_Mark_Twain" model="openlibrary.author">
+            <field name="name">Samuel Langhorne Clemens</field>
+            <field name="pseudonym">Mark Twain</field>
+            <field name="nationality_id" search="[('code', '=', 'US')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1835-11-30</field>
+            <field name="dieddate">1910-04-21</field>
+            <field name="biography"><![CDATA[
+<p><b>Mark Twain</b> (born Samuel Langhorne Clemens, November 30, 1835 - April 21, 1910) was an American writer, humorist, and essayist. He was praised as the "greatest humorist the United States has produced," with William Faulkner calling him "the father of American literature."</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Adventures of Tom Sawyer (1876)</li>
+    <li>Adventures of Huckleberry Finn (1884)</li>
+    <li>A Connecticut Yankee in King Arthur's Court (1889)</li>
+    <li>The Prince and the Pauper (1881)</li>
+    <li>Life on the Mississippi (1883)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 2. الکساندر دوما (Alexandre Dumas) -->
+        <record id="author_Alexandre_Dumas" model="openlibrary.author">
+            <field name="name">Alexandre Dumas</field>
+            <field name="pseudonym">Alexandre Dumas père</field>
+            <field name="nationality_id" search="[('code', '=', 'FR')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1802-07-24</field>
+            <field name="dieddate">1870-12-05</field>
+            <field name="biography"><![CDATA[
+<p><b>Alexandre Dumas</b> (24 July 1802 – 5 December 1870), also known as Alexandre Dumas père, was a French novelist and playwright. His works have been translated into nearly 100 languages and he is one of the most widely read French authors.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Three Musketeers (1844)</li>
+    <li>The Count of Monte Cristo (1844)</li>
+    <li>Twenty Years After (1845)</li>
+    <li>The Vicomte of Bragelonne (1847)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 3. چارلز دیکنز (Charles Dickens) -->
+        <record id="author_Charles_Dickens" model="openlibrary.author">
+            <field name="name">Charles John Huffam Dickens</field>
+            <field name="pseudonym">Charles Dickens</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1812-02-07</field>
+            <field name="dieddate">1870-06-09</field>
+            <field name="biography"><![CDATA[
+<p><b>Charles Dickens</b> (7 February 1812 – 9 June 1870) was an English writer and social critic. He created some of the world's best-known fictional characters and is regarded as the greatest novelist of the Victorian era.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Oliver Twist (1837)</li>
+    <li>A Christmas Carol (1843)</li>
+    <li>David Copperfield (1849)</li>
+    <li>A Tale of Two Cities (1859)</li>
+    <li>Great Expectations (1860)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 4. ویکتور هوگو (Victor Hugo) -->
+        <record id="author_Victor_Hugo" model="openlibrary.author">
+            <field name="name">Victor Marie Hugo</field>
+            <field name="pseudonym">Victor Hugo</field>
+            <field name="nationality_id" search="[('code', '=', 'FR')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1802-02-26</field>
+            <field name="dieddate">1885-05-22</field>
+            <field name="biography"><![CDATA[
+<p><b>Victor Hugo</b> (26 February 1802 – 22 May 1885) was a French Romantic writer, poet, and politician. He is considered one of the greatest and best-known French writers.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Hunchback of Notre-Dame (1831)</li>
+    <li>Les Misérables (1862)</li>
+    <li>The Man Who Laughs (1869)</li>
+    <li>Toilers of the Sea (1866)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 5. ایزاک آسیموف (Isaac Asimov) -->
+        <record id="author_Isaac_Asimov" model="openlibrary.author">
+            <field name="name">Isaac Asimov</field>
+            <field name="pseudonym">Isaac Asimov</field>
+            <field name="nationality_id" search="[('code', '=', 'US')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1920-01-02</field>
+            <field name="dieddate">1992-04-06</field>
+            <field name="biography"><![CDATA[
+<p><b>Isaac Asimov</b> (January 2, 1920 – April 6, 1992) was an American writer and professor of biochemistry. He was known for his works of science fiction and popular science.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Foundation (1951)</li>
+    <li>I, Robot (1950)</li>
+    <li>The Caves of Steel (1953)</li>
+    <li>The Gods Themselves (1972)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 6. جی. آر. آر. تالکین (J.R.R. Tolkien) -->
+        <record id="author_JRR_Tolkien" model="openlibrary.author">
+            <field name="name">John Ronald Reuel Tolkien</field>
+            <field name="pseudonym">J.R.R. Tolkien</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1892-01-03</field>
+            <field name="dieddate">1973-09-02</field>
+            <field name="biography"><![CDATA[
+<p><b>J.R.R. Tolkien</b> (3 January 1892 – 2 September 1973) was an English writer, poet, and academic professor at Oxford University. He is best known for his classic high fantasy works.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Hobbit (1937)</li>
+    <li>The Lord of the Rings: The Fellowship of the Ring (1954)</li>
+    <li>The Lord of the Rings: The Two Towers (1954)</li>
+    <li>The Lord of the Rings: The Return of the King (1955)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 7. جی. کی. رولینگ (J.K. Rowling) -->
+        <record id="author_JK_Rowling" model="openlibrary.author">
+            <field name="name">Joanne Rowling</field>
+            <field name="pseudonym">J.K. Rowling</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">female</field>
+            <field name="birthday">1965-07-31</field>
+            <field name="biography"><![CDATA[
+<p><b>J.K. Rowling</b> (born 31 July 1965) is a British author and philanthropist. She is best known for writing the Harry Potter fantasy series, which has sold more than 500 million copies.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Harry Potter and the Sorcerer's Stone (1997)</li>
+    <li>Harry Potter and the Chamber of Secrets (1998)</li>
+    <li>Harry Potter and the Prisoner of Azkaban (1999)</li>
+    <li>Harry Potter and the Goblet of Fire (2000)</li>
+    <li>Harry Potter and the Order of the Phoenix (2003)</li>
+    <li>Harry Potter and the Half-Blood Prince (2005)</li>
+    <li>Harry Potter and the Deathly Hallows (2007)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 8. آرتور سی. کلارک (Arthur C. Clarke) -->
+        <record id="author_Arthur_C_Clarke" model="openlibrary.author">
+            <field name="name">Arthur Charles Clarke</field>
+            <field name="pseudonym">Arthur C. Clarke</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1917-12-16</field>
+            <field name="dieddate">2008-03-19</field>
+            <field name="biography"><![CDATA[
+<p><b>Arthur C. Clarke</b> (16 December 1917 – 19 March 2008) was a British science fiction writer, futurist, and inventor. He co-wrote the screenplay for the 1968 film 2001: A Space Odyssey.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Childhood's End (1953)</li>
+    <li>2001: A Space Odyssey (1968)</li>
+    <li>Rendezvous with Rama (1973)</li>
+    <li>The Fountains of Paradise (1979)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 9. هومر (Homer) - بدون تاریخ منفی -->
+        <record id="author_Homer" model="openlibrary.author">
+            <field name="name">Homer</field>
+            <field name="pseudonym">Homer</field>
+            <field name="nationality_id" search="[('code', '=', 'GR')]"/>
+            <field name="gender">male</field>
+            <field name="birthday" eval="False"/>
+            <field name="dieddate" eval="False"/>
+            <field name="biography"><![CDATA[
+<p><b>Homer</b> (c. 8th century BC) was an ancient Greek poet who is credited as the author of the Iliad and the Odyssey. Homer is considered one of the most revered and influential authors in history.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Iliad (c. 8th century BC)</li>
+    <li>The Odyssey (c. 8th century BC)</li>
+</ul>
+<p><i>Note: Exact birth and death dates are unknown. Homer lived approximately in the 8th century BC.</i></p>
+            ]]></field>
+        </record>
+
+        <!-- 10. ویلیام شکسپیر (William Shakespeare) -->
+        <record id="author_William_Shakespeare" model="openlibrary.author">
+            <field name="name">William Shakespeare</field>
+            <field name="pseudonym">William Shakespeare</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1564-04-23</field>
+            <field name="dieddate">1616-04-23</field>
+            <field name="biography"><![CDATA[
+<p><b>William Shakespeare</b> (23 April 1564 – 23 April 1616) was an English playwright, poet, and actor. He is widely regarded as the greatest writer in the English language.</p>
+<p><b>Famous Works:</b></p>
+<ul>
+    <li>Romeo and Juliet (1595)</li>
+    <li>Hamlet (1599)</li>
+    <li>Macbeth (1605)</li>
+    <li>Othello (1603)</li>
+    <li>King Lear (1605)</li>
+    <li>Sonnet 18 (1609)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 11. لئو تولستوی (Leo Tolstoy) -->
+        <record id="author_Leo_Tolstoy" model="openlibrary.author">
+            <field name="name">Leo Tolstoy</field>
+            <field name="pseudonym">Leo Tolstoy</field>
+            <field name="nationality_id" search="[('code', '=', 'RU')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1828-09-09</field>
+            <field name="dieddate">1910-11-20</field>
+            <field name="biography"><![CDATA[
+<p><b>Leo Tolstoy</b> (9 September 1828 – 20 November 1910) was a Russian writer who is regarded as one of the greatest authors of all time.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>War and Peace (1869)</li>
+    <li>Anna Karenina (1878)</li>
+    <li>The Death of Ivan Ilyich (1886)</li>
+    <li>Resurrection (1899)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 12. فیودور داستایوفسکی (Fyodor Dostoevsky) -->
+        <record id="author_Fyodor_Dostoevsky" model="openlibrary.author">
+            <field name="name">Fyodor Dostoevsky</field>
+            <field name="pseudonym">Fyodor Dostoevsky</field>
+            <field name="nationality_id" search="[('code', '=', 'RU')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1821-11-11</field>
+            <field name="dieddate">1881-02-09</field>
+            <field name="biography"><![CDATA[
+<p><b>Fyodor Dostoevsky</b> (11 November 1821 – 9 February 1881) was a Russian novelist, short story writer, and journalist. His literary works explore human psychology in 19th-century Russia.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Crime and Punishment (1866)</li>
+    <li>The Idiot (1869)</li>
+    <li>Demons (1872)</li>
+    <li>The Brothers Karamazov (1880)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 13. ارنست همینگوی (Ernest Hemingway) -->
+        <record id="author_Ernest_Hemingway" model="openlibrary.author">
+            <field name="name">Ernest Hemingway</field>
+            <field name="pseudonym">Ernest Hemingway</field>
+            <field name="nationality_id" search="[('code', '=', 'US')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1899-07-21</field>
+            <field name="dieddate">1961-07-02</field>
+            <field name="biography"><![CDATA[
+<p><b>Ernest Hemingway</b> (July 21, 1899 – July 2, 1961) was an American novelist, short-story writer, and journalist. His economical and understated style had a strong influence on 20th-century fiction.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Old Man and the Sea (1952)</li>
+    <li>A Farewell to Arms (1929)</li>
+    <li>For Whom the Bell Tolls (1940)</li>
+    <li>The Sun Also Rises (1926)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 14. فردوسی (Ferdowsi) -->
+        <record id="author_Ferdowsi" model="openlibrary.author">
+            <field name="name">Ferdowsi</field>
+            <field name="pseudonym">Ferdowsi</field>
+            <field name="nationality_id" search="[('code', '=', 'IR')]"/>
+            <field name="gender">male</field>
+            <field name="birthday" eval="False"/>
+            <field name="dieddate" eval="False"/>
+            <field name="biography"><![CDATA[
+<p><b>Ferdowsi</b> (c. 935 – c. 1025) was a Persian poet and the author of Shahnameh ("Book of Kings"), which is the world's longest epic poem created by a single poet.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Shahnameh (Book of Kings) (1010)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 15. ادگار آلن پو (Edgar Allan Poe) -->
+        <record id="author_Edgar_Allan_Poe" model="openlibrary.author">
+            <field name="name">Edgar Allan Poe</field>
+            <field name="pseudonym">Edgar Allan Poe</field>
+            <field name="nationality_id" search="[('code', '=', 'US')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1809-01-19</field>
+            <field name="dieddate">1849-10-07</field>
+            <field name="biography"><![CDATA[
+<p><b>Edgar Allan Poe</b> (January 19, 1809 – October 7, 1849) was an American writer, poet, editor, and literary critic. He is best known for his tales of mystery and the macabre.</p>
+<p><b>Famous Works:</b></p>
+<ul>
+    <li>The Raven (1845) - poem</li>
+    <li>The Tell-Tale Heart (1843) - short story</li>
+    <li>The Fall of the House of Usher (1839)</li>
+    <li>The Murders in the Rue Morgue (1841)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 16. جین استین (Jane Austen) -->
+        <record id="author_Jane_Austen" model="openlibrary.author">
+            <field name="name">Jane Austen</field>
+            <field name="pseudonym">Jane Austen</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">female</field>
+            <field name="birthday">1775-12-16</field>
+            <field name="dieddate">1817-07-18</field>
+            <field name="biography"><![CDATA[
+<p><b>Jane Austen</b> (16 December 1775 – 18 July 1817) was an English novelist known primarily for her six major novels, which critique the British landed gentry.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>Pride and Prejudice (1813)</li>
+    <li>Sense and Sensibility (1811)</li>
+    <li>Emma (1815)</li>
+    <li>Mansfield Park (1814)</li>
+    <li>Persuasion (1817)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 17. فردریک فورسایت (Frederick Forsyth) -->
+        <record id="author_Frederick_Forsyth" model="openlibrary.author">
+            <field name="name">Frederick Forsyth</field>
+            <field name="pseudonym">Frederick Forsyth</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1938-08-25</field>
+            <field name="biography"><![CDATA[
+<p><b>Frederick Forsyth</b> (born 25 August 1938) is an English novelist and journalist. He is best known for his thrillers. His books have sold more than 70 million copies worldwide.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>The Day of the Jackal (1971)</li>
+    <li>The Odessa File (1972)</li>
+    <li>The Dogs of War (1974)</li>
+    <li>The Fourth Protocol (1984)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 18. جان گریشام (John Grisham) -->
+        <record id="author_John_Grisham" model="openlibrary.author">
+            <field name="name">John Grisham</field>
+            <field name="pseudonym">John Grisham</field>
+            <field name="nationality_id" search="[('code', '=', 'US')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1955-02-08</field>
+            <field name="biography"><![CDATA[
+<p><b>John Grisham</b> (born February 8, 1955) is an American novelist, lawyer, and former politician. He is best known for his popular legal thrillers. His books have been translated into 42 languages.</p>
+<p><b>Famous Books:</b></p>
+<ul>
+    <li>A Time to Kill (1989)</li>
+    <li>The Firm (1991)</li>
+    <li>The Pelican Brief (1992)</li>
+    <li>The Client (1993)</li>
+    <li>The Rainmaker (1995)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 19. لی چایلد (Lee Child) -->
+        <record id="author_Lee_Child" model="openlibrary.author">
+            <field name="name">Lee Child</field>
+            <field name="pseudonym">Lee Child</field>
+            <field name="nationality_id" search="[('code', '=', 'GB')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1954-10-29</field>
+            <field name="biography"><![CDATA[
+<p><b>Lee Child</b> (born 29 October 1954) is a British author. He is the author of the Jack Reacher series of thriller novels. The series has sold over 100 million copies worldwide.</p>
+<p><b>Famous Books (Jack Reacher Series):</b></p>
+<ul>
+    <li>Killing Floor (1997)</li>
+    <li>Die Trying (1998)</li>
+    <li>Tripwire (1999)</li>
+    <li>Echo Burning (2001)</li>
+    <li>Without Fail (2002)</li>
+    <li>Persuader (2003)</li>
+    <li>One Shot (2005)</li>
+</ul>
+            ]]></field>
+        </record>
+
+        <!-- 20. میشل زواکو (Michel Zévaco) -->
+        <record id="author_Michel_Zevaco" model="openlibrary.author">
+            <field name="name">Michel Zévaco</field>
+            <field name="pseudonym">Michel Zévaco</field>
+            <field name="nationality_id" search="[('code', '=', 'FR')]"/>
+            <field name="gender">male</field>
+            <field name="birthday">1860-02-01</field>
+            <field name="dieddate">1918-08-08</field>
+            <field name="biography"><![CDATA[
+<p><b>Michel Zévaco</b> (1 February 1860 – 8 August 1918) was a French journalist, novelist, and publisher. He is best known for his swashbuckling novels, particularly the Pardaillan series.</p>
+<p><b>Famous Books (Pardaillan Series):</b></p>
+<ul>
+    <li>The Pardaillan (1900)</li>
+    <li>The Heroic Pardaillan (1901)</li>
+    <li>The Epic of the Pardaillan (1902)</li>
+    <li>The Pardaillan Captain (1905)</li>
+    <li>The Chevalier of Pardaillan (1907)</li>
+</ul>
+            ]]></field>
+        </record>        
+
+        <!-- Books -->
+        <record id="book_adventures_tom_sawyer" model="openlibrary.book">
+            <field name="title">The Adventures of Tom Sawyer</field>
+            <field name="summary"><![CDATA[
+<p>The Adventures of Tom Sawyer by Mark Twain is an 1876 novel about a young boy growing up along the Mississippi River. The story is set in the fictional town of St. Petersburg, inspired by Hannibal, Missouri, where Twain lived.</p>
+<p>The novel follows the mischievous Tom Sawyer, his friend Huckleberry Finn, and their adventures including witnessing a murder, becoming pirates, finding treasure, and getting lost in a cave. It is considered one of the greatest classics of American literature.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Mark_Twain')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_adventure'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_novel')])]"/>
+        </record>
+
+        <record id="book_adventures_huckleberry_finn" model="openlibrary.book">
+            <field name="title">Adventures of Huckleberry Finn</field>
+            <field name="summary"><![CDATA[
+<p>Adventures of Huckleberry Finn is a novel by Mark Twain, first published in 1884. It is a direct sequel to The Adventures of Tom Sawyer and is often considered the "Great American Novel."</p>
+<p>The book tells the story of Huck Finn and his journey down the Mississippi River with an escaped slave named Jim. It explores themes of race, identity, and morality in pre-Civil War America.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Mark_Twain')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_adventure'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های الکساندر دوما ==================== -->
+        <record id="book_three_musketeers" model="openlibrary.book">
+            <field name="title">The Three Musketeers</field>
+            <field name="summary"><![CDATA[
+<p>The Three Musketeers is a historical adventure novel written by Alexandre Dumas, first published in 1844. It is set in the 17th century and follows the adventures of a young man named d'Artagnan who joins the three musketeers of the King: Athos, Porthos, and Aramis.</p>
+<p>The novel is famous for the slogan "All for one, one for all" and has been adapted into numerous films, television series, and stage productions.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Alexandre_Dumas')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_adventure'), ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <record id="book_count_monte_cristo" model="openlibrary.book">
+            <field name="title">The Count of Monte Cristo</field>
+            <field name="summary"><![CDATA[
+<p>The Count of Monte Cristo is an adventure novel by Alexandre Dumas, published in 1844. It is often considered one of Dumas's greatest works, alongside The Three Musketeers.</p>
+<p>The story follows Edmond Dantès, who is falsely imprisoned in the Château d'If. After escaping, he acquires a fortune and seeks revenge on those who wronged him, transforming into the mysterious Count of Monte Cristo.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Alexandre_Dumas')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_adventure'), ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های چارلز دیکنز ==================== -->
+        <record id="book_oliver_twist" model="openlibrary.book">
+            <field name="title">Oliver Twist</field>
+            <field name="summary"><![CDATA[
+<p>Oliver Twist is the second novel by Charles Dickens, published as a serial from 1837 to 1839. It tells the story of an orphan boy who escapes from a workhouse to London.</p>
+<p>In London, Oliver falls in with a group of juvenile pickpockets led by the elderly criminal Fagin. The novel exposes the harsh realities of poverty and child labor in Victorian England.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Charles_Dickens')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <record id="book_tale_two_cities" model="openlibrary.book">
+            <field name="title">A Tale of Two Cities</field>
+            <field name="summary"><![CDATA[
+<p>A Tale of Two Cities is a historical novel by Charles Dickens, published in 1859. It is set in London and Paris before and during the French Revolution.</p>
+<p>The novel tells the story of Dr. Manette, his daughter Lucie, and her husband Charles Darnay, a French aristocrat. It explores themes of resurrection, sacrifice, and social injustice.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Charles_Dickens')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_history')])]"/>
+        </record>
+
+        <record id="book_great_expectations" model="openlibrary.book">
+            <field name="title">Great Expectations</field>
+            <field name="summary"><![CDATA[
+<p>Great Expectations is the thirteenth novel by Charles Dickens, published in 1861. It is considered one of his greatest and most sophisticated works.</p>
+<p>The novel follows the story of Pip, an orphan boy who rises from humble beginnings to become a gentleman, thanks to a mysterious benefactor. It explores themes of social class, ambition, and moral redemption.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Charles_Dickens')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های ویکتور هوگو ==================== -->
+        <record id="book_les_miserables" model="openlibrary.book">
+            <field name="title">Les Misérables</field>
+            <field name="summary"><![CDATA[
+<p>Les Misérables is a French historical novel by Victor Hugo, first published in 1862. It is considered one of the greatest novels of the 19th century.</p>
+<p>The story follows Jean Valjean, a former convict who seeks redemption while being pursued by the ruthless Inspector Javert. Set against the backdrop of revolutionary France, the novel explores themes of justice, love, and sacrifice.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Victor_Hugo')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_history')])]"/>
+        </record>
+
+        <record id="book_hunchback_notre_dame" model="openlibrary.book">
+            <field name="title">The Hunchback of Notre-Dame</field>
+            <field name="summary"><![CDATA[
+<p>The Hunchback of Notre-Dame is a French Gothic novel by Victor Hugo, published in 1831. The story is set in Paris during the reign of Louis XI.</p>
+<p>The novel focuses on the tragic story of Quasimodo, the deformed bell-ringer of Notre-Dame Cathedral, and his love for the beautiful Romani dancer Esmeralda.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Victor_Hugo')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_romance')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های ایزاک آسیموف ==================== -->
+        <record id="book_foundation" model="openlibrary.book">
+            <field name="title">Foundation</field>
+            <field name="summary"><![CDATA[
+<p>Foundation is the first novel in Isaac Asimov's Foundation series, published in 1951. It is considered a landmark in science fiction literature.</p>
+<p>The story follows a group of scientists who create a foundation to preserve knowledge and shorten the coming dark ages after the fall of the Galactic Empire.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Isaac_Asimov')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_science_fiction'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <record id="book_i_robot" model="openlibrary.book">
+            <field name="title">I, Robot</field>
+            <field name="summary"><![CDATA[
+<p>I, Robot is a collection of nine science fiction short stories by Isaac Asimov, first published in 1950. It introduced the famous Three Laws of Robotics.</p>
+<p>The stories explore the interaction between humans and robots, examining the moral and ethical implications of artificial intelligence.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Isaac_Asimov')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_science_fiction'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های جی. آر. آر. تالکین ==================== -->
+        <record id="book_hobbit" model="openlibrary.book">
+            <field name="title">The Hobbit</field>
+            <field name="summary"><![CDATA[
+<p>The Hobbit, or There and Back Again, is a children's fantasy novel by J.R.R. Tolkien, published in 1937. It serves as a prelude to The Lord of the Rings.</p>
+<p>The story follows Bilbo Baggins, a hobbit who is recruited by the wizard Gandalf to join a group of dwarves on a quest to reclaim their homeland from the dragon Smaug.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_JRR_Tolkien')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_fantasy'), ref('openlibrary.tag_adventure'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <record id="book_lord_rings_fellowship" model="openlibrary.book">
+            <field name="title">The Lord of the Rings: The Fellowship of the Ring</field>
+            <field name="summary"><![CDATA[
+<p>The Fellowship of the Ring is the first volume of J.R.R. Tolkien's epic fantasy novel The Lord of the Rings, published in 1954. It is widely considered one of the greatest works of fantasy literature.</p>
+<p>The story follows Frodo Baggins as he sets out from the Shire to destroy the One Ring, accompanied by the Fellowship of the Ring.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_JRR_Tolkien')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_fantasy'), ref('openlibrary.tag_adventure'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های جی. کی. رولینگ ==================== -->
+        <record id="book_harry_potter_philosopher_stone" model="openlibrary.book">
+            <field name="title">Harry Potter and the Philosopher's Stone</field>
+            <field name="summary"><![CDATA[
+<p>Harry Potter and the Philosopher's Stone is the first novel in the Harry Potter series by J.K. Rowling, published in 1997. It introduces the young wizard Harry Potter.</p>
+<p>The story follows Harry as he discovers his magical heritage, attends Hogwarts School of Witchcraft and Wizardry, and faces the dark wizard Lord Voldemort.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_JK_Rowling')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_fantasy'), ref('openlibrary.tag_adventure'), ref('openlibrary.tag_children')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های آرتور سی. کلارک ==================== -->
+        <record id="book_2001_space_odyssey" model="openlibrary.book">
+            <field name="title">2001: A Space Odyssey</field>
+            <field name="summary"><![CDATA[
+<p>2001: A Space Odyssey is a science fiction novel by Arthur C. Clarke, published in 1968. It was developed concurrently with the film of the same name directed by Stanley Kubrick.</p>
+<p>The novel follows a voyage to Jupiter with the sentient computer HAL 9000, exploring themes of evolution, technology, and extraterrestrial life.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Arthur_C_Clarke')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_science_fiction'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های هومر ==================== -->
+        <record id="book_iliad" model="openlibrary.book">
+            <field name="title">The Iliad</field>
+            <field name="summary"><![CDATA[
+<p>The Iliad is an ancient Greek epic poem attributed to Homer, dating to the 8th century BC. It is one of the oldest works of Western literature.</p>
+<p>The poem describes the events of the Trojan War, focusing on the hero Achilles and his quarrel with King Agamemnon.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Homer')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_poetry'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_history')])]"/>
+        </record>
+
+        <record id="book_odyssey" model="openlibrary.book">
+            <field name="title">The Odyssey</field>
+            <field name="summary"><![CDATA[
+<p>The Odyssey is an ancient Greek epic poem attributed to Homer, dating to the 8th century BC. It is a sequel to the Iliad and one of the foundational works of Western literature.</p>
+<p>The poem follows the hero Odysseus on his ten-year journey home after the Trojan War, facing monsters, gods, and other obstacles.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Homer')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_poetry'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_adventure')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های ویلیام شکسپیر ==================== -->
+        <record id="book_romeo_juliet" model="openlibrary.book">
+            <field name="title">Romeo and Juliet</field>
+            <field name="summary"><![CDATA[
+<p>Romeo and Juliet is a tragedy written by William Shakespeare early in his career, first published in 1597. It is one of his most famous plays.</p>
+<p>The play tells the story of two young star-crossed lovers whose deaths ultimately reconcile their feuding families.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_William_Shakespeare')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_romance'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_novel')])]"/>
+        </record>
+
+        <record id="book_hamlet" model="openlibrary.book">
+            <field name="title">Hamlet</field>
+            <field name="summary"><![CDATA[
+<p>The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet, is a tragedy by William Shakespeare, written between 1599 and 1601. It is Shakespeare's longest play and one of his most quoted works.</p>
+<p>The play dramatizes Prince Hamlet's revenge against his uncle Claudius, who has murdered Hamlet's father and married his mother.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_William_Shakespeare')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_classics'), ref('openlibrary.tag_novel')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های لئو تولستوی ==================== -->
+        <record id="book_war_peace" model="openlibrary.book">
+            <field name="title">War and Peace</field>
+            <field name="summary"><![CDATA[
+<p>War and Peace is a literary masterpiece by Leo Tolstoy, first published in 1869. It is considered one of the greatest novels ever written.</p>
+<p>The novel chronicles the French invasion of Russia and its impact on several aristocratic families, exploring themes of history, fate, and human nature.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Leo_Tolstoy')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_history')])]"/>
+        </record>
+
+        <record id="book_anna_karenina" model="openlibrary.book">
+            <field name="title">Anna Karenina</field>
+            <field name="summary"><![CDATA[
+<p>Anna Karenina is a novel by Leo Tolstoy, published in 1878. It is widely regarded as one of the greatest works of literature ever written.</p>
+<p>The novel explores themes of love, betrayal, and social change through the tragic story of Anna Karenina and her affair with Count Vronsky.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Leo_Tolstoy')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_romance')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های فیودور داستایوفسکی ==================== -->
+        <record id="book_crime_punishment" model="openlibrary.book">
+            <field name="title">Crime and Punishment</field>
+            <field name="summary"><![CDATA[
+<p>Crime and Punishment is a novel by Fyodor Dostoevsky, first published in 1866. It is considered one of the greatest novels of all time.</p>
+<p>The story follows Rodion Raskolnikov, a former student who plans and commits murder, and his subsequent psychological and moral struggles.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Fyodor_Dostoevsky')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <record id="book_brothers_karamazov" model="openlibrary.book">
+            <field name="title">The Brothers Karamazov</field>
+            <field name="summary"><![CDATA[
+<p>The Brothers Karamazov is the final novel by Fyodor Dostoevsky, published in 1880. It is widely regarded as one of the greatest achievements in world literature.</p>
+<p>The novel explores deep philosophical themes of God, free will, and morality through the story of the three Karamazov brothers.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Fyodor_Dostoevsky')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های ارنست همینگوی ==================== -->
+        <record id="book_old_man_sea" model="openlibrary.book">
+            <field name="title">The Old Man and the Sea</field>
+            <field name="summary"><![CDATA[
+<p>The Old Man and the Sea is a short novel by Ernest Hemingway, published in 1952. It was the last major work of fiction published during his lifetime and won the Pulitzer Prize for Fiction in 1953.</p>
+<p>The story follows an aging Cuban fisherman Santiago and his epic struggle to catch a giant marlin in the Gulf Stream.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Ernest_Hemingway')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_adventure')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های فردوسی ==================== -->
+        <record id="book_shahnameh" model="openlibrary.book">
+            <field name="title">Shahnameh (The Book of Kings)</field>
+            <field name="summary"><![CDATA[
+<p>The Shahnameh is an epic poem written by the Persian poet Ferdowsi, completed in 1010 AD. It is the world's longest epic poem created by a single author.</p>
+<p>The poem tells the mythical and historical past of Greater Iran, containing 50,000 couplets and exploring themes of kingship, heroism, and the battle between good and evil.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Ferdowsi')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_poetry'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_history')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های ادگار آلن پو ==================== -->
+        <record id="book_raven" model="openlibrary.book">
+            <field name="title">The Raven and Other Poems</field>
+            <field name="summary"><![CDATA[
+<p>The Raven is a narrative poem by Edgar Allan Poe, first published in 1845. It is one of the most famous poems in American literature.</p>
+<p>The poem tells the story of a distraught lover who is visited by a mysterious raven that can only say "Nevermore." The collection includes other famous works like "The Tell-Tale Heart" and "The Fall of the House of Usher."</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Edgar_Allan_Poe')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_poetry'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_horror')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های جین استین ==================== -->
+        <record id="book_pride_prejudice" model="openlibrary.book">
+            <field name="title">Pride and Prejudice</field>
+            <field name="summary"><![CDATA[
+<p>Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. It is one of the most beloved novels in English literature.</p>
+<p>The story follows the character Elizabeth Bennet as she deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of early 19th-century England.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Jane_Austen')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_classics'), ref('openlibrary.tag_romance')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های فردریک فورسایت ==================== -->
+        <record id="book_day_of_jackal" model="openlibrary.book">
+            <field name="title">The Day of the Jackal</field>
+            <field name="summary"><![CDATA[
+<p>The Day of the Jackal is a thriller novel by Frederick Forsyth, published in 1971. It was his debut novel and won the Edgar Award for Best Novel.</p>
+<p>The story follows a professional assassin known as the "Jackal" who is hired to assassinate French President Charles de Gaulle.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Frederick_Forsyth')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_adventure')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های جان گریشام ==================== -->
+        <record id="book_firm" model="openlibrary.book">
+            <field name="title">The Firm</field>
+            <field name="summary"><![CDATA[
+<p>The Firm is a legal thriller by John Grisham, published in 1991. It was his second novel and became a bestseller, adapted into a 1993 film starring Tom Cruise.</p>
+<p>The story follows a young lawyer who joins a small but prosperous law firm, only to discover that it is involved in illegal activities.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_John_Grisham')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_adventure')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های لی چایلد ==================== -->
+        <record id="book_killing_floor" model="openlibrary.book">
+            <field name="title">Killing Floor</field>
+            <field name="summary"><![CDATA[
+<p>Killing Floor is the debut novel by Lee Child, published in 1997. It introduces the character Jack Reacher, a former military policeman and drifter.</p>
+<p>The story follows Reacher as he arrives in the small town of Margrave, Georgia, where he is arrested for murder and must clear his name while uncovering a larger conspiracy.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Lee_Child')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_adventure')])]"/>
+        </record>
+
+        <!-- ==================== کتاب‌های میشل زواکو ==================== -->
+        <record id="book_pardaillan" model="openlibrary.book">
+            <field name="title">Pardaillan</field>
+            <field name="summary"><![CDATA[
+<p>Pardaillan is a swashbuckling adventure novel by Michel Zévaco, first published in 1900. It is the first book in the Pardaillan series.</p>
+<p>The novel follows the adventures of the heroic knight Pardaillan during the French Wars of Religion in the 16th century.</p>
+            ]]></field>
+            <field name="author_ids" eval="[(6, 0, [ref('openlibrary.author_Michel_Zevaco')])]"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('openlibrary.tag_novel'), ref('openlibrary.tag_adventure'), ref('openlibrary.tag_history')])]"/>
+        </record>        
+			<!-- Book Editions -->
+            <record id="bookedit_book_2001_space_odyssey_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_2001_space_odyssey" />
+                <field name="publisher_id" ref="publisher_penguin" />
+                <field name="edition">1</field>
+                <field name="publish_date">2010-09-12</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">18.53</field>
+            </record>
+            <record id="bookedit_book_adventures_huckleberry_finn_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_adventures_huckleberry_finn" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2013-08-03</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">23.80</field>
+            </record>
+            <record id="bookedit_book_adventures_huckleberry_finn_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_adventures_huckleberry_finn" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">2</field>
+                <field name="publish_date">2022-11-17</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">8.94</field>
+            </record>
+            <record id="bookedit_book_adventures_tom_sawyer_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_adventures_tom_sawyer" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">1</field>
+                <field name="publish_date">2016-10-10</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">6.92</field>
+            </record>
+            <record id="bookedit_book_adventures_tom_sawyer_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_adventures_tom_sawyer" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">2</field>
+                <field name="publish_date">2023-12-12</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">14.06</field>
+            </record>
+            <record id="bookedit_book_adventures_tom_sawyer_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_adventures_tom_sawyer" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">3</field>
+                <field name="publish_date">2023-12-26</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">17.67</field>
+            </record>
+            <record id="bookedit_book_anna_karenina_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_anna_karenina" />
+                <field name="publisher_id" ref="publisher_wiley" />
+                <field name="edition">1</field>
+                <field name="publish_date">2020-08-20</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">24.24</field>
+            </record>
+            <record id="bookedit_book_brothers_karamazov_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_brothers_karamazov" />
+                <field name="publisher_id" ref="publisher_wiley" />
+                <field name="edition">1</field>
+                <field name="publish_date">2007-04-05</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">8.55</field>
+            </record>
+            <record id="bookedit_book_count_monte_cristo_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_count_monte_cristo" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2008-07-24</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">7.26</field>
+            </record>
+            <record id="bookedit_book_count_monte_cristo_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_count_monte_cristo" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">2</field>
+                <field name="publish_date">2020-08-24</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">12.62</field>
+            </record>
+            <record id="bookedit_book_count_monte_cristo_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_count_monte_cristo" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">3</field>
+                <field name="publish_date">2024-12-27</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">25.69</field>
+            </record>
+            <record id="bookedit_book_crime_punishment_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_crime_punishment" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">1</field>
+                <field name="publish_date">2011-06-24</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">11.17</field>
+            </record>
+            <record id="bookedit_book_crime_punishment_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_crime_punishment" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">2</field>
+                <field name="publish_date">2012-08-28</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">24.34</field>
+            </record>
+            <record id="bookedit_book_day_of_jackal_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_day_of_jackal" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2015-08-02</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">5.51</field>
+            </record>
+            <record id="bookedit_book_day_of_jackal_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_day_of_jackal" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">2</field>
+                <field name="publish_date">2017-11-16</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">16.79</field>
+            </record>
+            <record id="bookedit_book_firm_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_firm" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">1</field>
+                <field name="publish_date">2020-02-23</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">18.94</field>
+            </record>
+            <record id="bookedit_book_firm_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_firm" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">2</field>
+                <field name="publish_date">2020-05-27</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">25.74</field>
+            </record>
+            <record id="bookedit_book_firm_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_firm" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">3</field>
+                <field name="publish_date">2020-07-28</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">19.59</field>
+            </record>
+            <record id="bookedit_book_foundation_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_foundation" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2003-06-22</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">19.52</field>
+            </record>
+            <record id="bookedit_book_foundation_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_foundation" />
+                <field name="publisher_id" ref="publisher_penguin" />
+                <field name="edition">2</field>
+                <field name="publish_date">2023-09-22</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">11.54</field>
+            </record>
+            <record id="bookedit_book_foundation_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_foundation" />
+                <field name="publisher_id" ref="publisher_harper" />
+                <field name="edition">3</field>
+                <field name="publish_date">2025-11-26</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">6.95</field>
+            </record>
+            <record id="bookedit_book_great_expectations_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_great_expectations" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2019-05-07</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">10.56</field>
+            </record>
+            <record id="bookedit_book_hamlet_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_hamlet" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">1</field>
+                <field name="publish_date">2009-10-12</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">13.15</field>
+            </record>
+            <record id="bookedit_book_hamlet_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_hamlet" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">2</field>
+                <field name="publish_date">2016-11-22</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">20.63</field>
+            </record>
+            <record id="bookedit_book_hamlet_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_hamlet" />
+                <field name="publisher_id" ref="publisher_penguin" />
+                <field name="edition">3</field>
+                <field name="publish_date">2023-11-25</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">24.28</field>
+            </record>
+            <record id="bookedit_book_harry_potter_philosopher_stone_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_harry_potter_philosopher_stone" />
+                <field name="publisher_id" ref="publisher_penguin" />
+                <field name="edition">1</field>
+                <field name="publish_date">2010-12-08</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">17.59</field>
+            </record>
+            <record id="bookedit_book_hobbit_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_hobbit" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2004-06-13</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">8.86</field>
+            </record>
+            <record id="bookedit_book_hobbit_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_hobbit" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">2</field>
+                <field name="publish_date">2025-12-19</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">23.12</field>
+            </record>
+            <record id="bookedit_book_hunchback_notre_dame_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_hunchback_notre_dame" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">1</field>
+                <field name="publish_date">2024-11-15</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">19.55</field>
+            </record>
+            <record id="bookedit_book_i_robot_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_i_robot" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">1</field>
+                <field name="publish_date">2021-12-10</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">18.42</field>
+            </record>
+            <record id="bookedit_book_iliad_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_iliad" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2013-11-05</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">15.54</field>
+            </record>
+            <record id="bookedit_book_iliad_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_iliad" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">2</field>
+                <field name="publish_date">2019-12-23</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">18.18</field>
+            </record>
+            <record id="bookedit_book_killing_floor_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_killing_floor" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">1</field>
+                <field name="publish_date">2017-08-27</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">22.27</field>
+            </record>
+            <record id="bookedit_book_killing_floor_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_killing_floor" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">2</field>
+                <field name="publish_date">2022-12-27</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">7.22</field>
+            </record>
+            <record id="bookedit_book_killing_floor_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_killing_floor" />
+                <field name="publisher_id" ref="publisher_wiley" />
+                <field name="edition">3</field>
+                <field name="publish_date">2022-12-27</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">13.28</field>
+            </record>
+            <record id="bookedit_book_les_miserables_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_les_miserables" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">1</field>
+                <field name="publish_date">2021-10-13</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">9.89</field>
+            </record>
+            <record id="bookedit_book_les_miserables_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_les_miserables" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">2</field>
+                <field name="publish_date">2024-11-22</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">22.54</field>
+            </record>
+            <record id="bookedit_book_les_miserables_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_les_miserables" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">3</field>
+                <field name="publish_date">2025-12-27</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">13.58</field>
+            </record>
+            <record id="bookedit_book_lord_rings_fellowship_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_lord_rings_fellowship" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">1</field>
+                <field name="publish_date">2011-03-07</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">23.07</field>
+            </record>
+            <record id="bookedit_book_lord_rings_fellowship_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_lord_rings_fellowship" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">2</field>
+                <field name="publish_date">2019-09-07</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">7.73</field>
+            </record>
+            <record id="bookedit_book_lord_rings_fellowship_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_lord_rings_fellowship" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">3</field>
+                <field name="publish_date">2019-10-11</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">6.17</field>
+            </record>
+            <record id="bookedit_book_odyssey_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_odyssey" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">1</field>
+                <field name="publish_date">2012-11-05</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">14.97</field>
+            </record>
+            <record id="bookedit_book_old_man_sea_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_old_man_sea" />
+                <field name="publisher_id" ref="publisher_penguin" />
+                <field name="edition">1</field>
+                <field name="publish_date">2010-02-08</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">7.95</field>
+            </record>
+            <record id="bookedit_book_old_man_sea_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_old_man_sea" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">2</field>
+                <field name="publish_date">2021-03-17</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">18.17</field>
+            </record>
+            <record id="bookedit_book_old_man_sea_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_old_man_sea" />
+                <field name="publisher_id" ref="publisher_wiley" />
+                <field name="edition">3</field>
+                <field name="publish_date">2024-09-17</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">7.81</field>
+            </record>
+            <record id="bookedit_book_oliver_twist_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_oliver_twist" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">1</field>
+                <field name="publish_date">2013-07-26</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">8.86</field>
+            </record>
+            <record id="bookedit_book_pardaillan_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_pardaillan" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">1</field>
+                <field name="publish_date">2002-02-03</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">8.08</field>
+            </record>
+            <record id="bookedit_book_pardaillan_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_pardaillan" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">2</field>
+                <field name="publish_date">2019-04-22</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">14.53</field>
+            </record>
+            <record id="bookedit_book_pride_prejudice_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_pride_prejudice" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">1</field>
+                <field name="publish_date">2000-04-28</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">23.31</field>
+            </record>
+            <record id="bookedit_book_pride_prejudice_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_pride_prejudice" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">2</field>
+                <field name="publish_date">2012-05-28</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">6.72</field>
+            </record>
+            <record id="bookedit_book_pride_prejudice_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_pride_prejudice" />
+                <field name="publisher_id" ref="publisher_penguin" />
+                <field name="edition">3</field>
+                <field name="publish_date">2023-10-28</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">16.85</field>
+            </record>
+            <record id="bookedit_book_raven_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_raven" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">1</field>
+                <field name="publish_date">2025-09-14</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">17.54</field>
+            </record>
+            <record id="bookedit_book_romeo_juliet_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_romeo_juliet" />
+                <field name="publisher_id" ref="publisher_elsevier" />
+                <field name="edition">1</field>
+                <field name="publish_date">2007-06-19</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">6.85</field>
+            </record>
+            <record id="bookedit_book_romeo_juliet_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_romeo_juliet" />
+                <field name="publisher_id" ref="publisher_hachette" />
+                <field name="edition">2</field>
+                <field name="publish_date">2014-09-27</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">10.78</field>
+            </record>
+            <record id="bookedit_book_romeo_juliet_3" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_romeo_juliet" />
+                <field name="publisher_id" ref="publisher_macmillan" />
+                <field name="edition">3</field>
+                <field name="publish_date">2024-12-27</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">22.03</field>
+            </record>
+            <record id="bookedit_book_shahnameh_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_shahnameh" />
+                <field name="publisher_id" ref="publisher_simon" />
+                <field name="edition">1</field>
+                <field name="publish_date">2017-05-17</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">11.35</field>
+            </record>
+            <record id="bookedit_book_tale_two_cities_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_tale_two_cities" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">1</field>
+                <field name="publish_date">2013-07-28</field>
+                <field name="currency_id" ref="base.EUR" />
+                <field name="price">8.46</field>
+            </record>
+            <record id="bookedit_book_tale_two_cities_2" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_tale_two_cities" />
+                <field name="publisher_id" ref="publisher_nature" />
+                <field name="edition">2</field>
+                <field name="publish_date">2022-09-28</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">7.52</field>
+            </record>
+            <record id="bookedit_book_three_musketeers_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_three_musketeers" />
+                <field name="publisher_id" ref="publisher_harper" />
+                <field name="edition">1</field>
+                <field name="publish_date">2016-07-28</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">25.31</field>
+            </record>
+            <record id="bookedit_book_war_peace_1" model="openlibrary.bookedition">
+                <field name="book_id" ref="book_war_peace" />
+                <field name="publisher_id" ref="publisher_wiley" />
+                <field name="edition">1</field>
+                <field name="publish_date">2002-10-02</field>
+                <field name="currency_id" ref="base.USD" />
+                <field name="price">17.56</field>
+            </record>
+			<!-- Book Repositories -->
+            <record id="bookrepo_book_2001_space_odyssey_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_2001_space_odyssey" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">18.53</field>
+            </record>
+            <record id="bookrepo_book_2001_space_odyssey_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_2001_space_odyssey" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">18.53</field>
+            </record>
+            <record id="bookrepo_book_adventures_huckleberry_finn_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_huckleberry_finn" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">23.80</field>
+            </record>
+            <record id="bookrepo_book_adventures_huckleberry_finn_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_huckleberry_finn" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">8.94</field>
+            </record>
+            <record id="bookrepo_book_adventures_tom_sawyer_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_tom_sawyer" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">6.92</field>
+            </record>
+            <record id="bookrepo_book_adventures_tom_sawyer_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_tom_sawyer" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">6.92</field>
+            </record>
+            <record id="bookrepo_book_adventures_tom_sawyer_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_tom_sawyer" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">14.06</field>
+            </record>
+            <record id="bookrepo_book_adventures_tom_sawyer_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_tom_sawyer" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">14.06</field>
+            </record>
+            <record id="bookrepo_book_adventures_tom_sawyer_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_tom_sawyer" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">17.67</field>
+            </record>
+            <record id="bookrepo_book_adventures_tom_sawyer_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_adventures_tom_sawyer" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">17.67</field>
+            </record>
+            <record id="bookrepo_book_anna_karenina_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_anna_karenina" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">24.24</field>
+            </record>
+            <record id="bookrepo_book_brothers_karamazov_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_brothers_karamazov" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">8.55</field>
+            </record>
+            <record id="bookrepo_book_brothers_karamazov_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_brothers_karamazov" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">8.55</field>
+            </record>
+            <record id="bookrepo_book_count_monte_cristo_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_count_monte_cristo" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">7.26</field>
+            </record>
+            <record id="bookrepo_book_count_monte_cristo_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_count_monte_cristo" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">12.62</field>
+            </record>
+            <record id="bookrepo_book_count_monte_cristo_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_count_monte_cristo" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">25.69</field>
+            </record>
+            <record id="bookrepo_book_crime_punishment_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_crime_punishment" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">11.17</field>
+            </record>
+            <record id="bookrepo_book_crime_punishment_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_crime_punishment" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">11.17</field>
+            </record>
+            <record id="bookrepo_book_crime_punishment_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_crime_punishment" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">24.34</field>
+            </record>
+            <record id="bookrepo_book_crime_punishment_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_crime_punishment" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">24.34</field>
+            </record>
+            <record id="bookrepo_book_day_of_jackal_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_day_of_jackal" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">5.51</field>
+            </record>
+            <record id="bookrepo_book_day_of_jackal_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_day_of_jackal" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">16.79</field>
+            </record>
+            <record id="bookrepo_book_firm_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_firm" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">18.94</field>
+            </record>
+            <record id="bookrepo_book_firm_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_firm" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">18.94</field>
+            </record>
+            <record id="bookrepo_book_firm_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_firm" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">25.74</field>
+            </record>
+            <record id="bookrepo_book_firm_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_firm" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">25.74</field>
+            </record>
+            <record id="bookrepo_book_firm_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_firm" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">19.59</field>
+            </record>
+            <record id="bookrepo_book_firm_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_firm" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">19.59</field>
+            </record>
+            <record id="bookrepo_book_foundation_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_foundation" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">19.52</field>
+            </record>
+            <record id="bookrepo_book_foundation_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_foundation" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">19.52</field>
+            </record>
+            <record id="bookrepo_book_foundation_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_foundation" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">11.54</field>
+            </record>
+            <record id="bookrepo_book_foundation_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_foundation" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">11.54</field>
+            </record>
+            <record id="bookrepo_book_foundation_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_foundation" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">6.95</field>
+            </record>
+            <record id="bookrepo_book_foundation_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_foundation" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">6.95</field>
+            </record>
+            <record id="bookrepo_book_great_expectations_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_great_expectations" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">10.56</field>
+            </record>
+            <record id="bookrepo_book_great_expectations_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_great_expectations" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">10.56</field>
+            </record>
+            <record id="bookrepo_book_hamlet_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hamlet" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">13.15</field>
+            </record>
+            <record id="bookrepo_book_hamlet_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hamlet" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">20.63</field>
+            </record>
+            <record id="bookrepo_book_hamlet_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hamlet" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">24.28</field>
+            </record>
+            <record id="bookrepo_book_harry_potter_philosopher_stone_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_harry_potter_philosopher_stone" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">17.59</field>
+            </record>
+            <record id="bookrepo_book_harry_potter_philosopher_stone_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_harry_potter_philosopher_stone" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">17.59</field>
+            </record>
+            <record id="bookrepo_book_hobbit_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hobbit" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">8.86</field>
+            </record>
+            <record id="bookrepo_book_hobbit_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hobbit" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">23.12</field>
+            </record>
+            <record id="bookrepo_book_hunchback_notre_dame_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hunchback_notre_dame" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">19.55</field>
+            </record>
+            <record id="bookrepo_book_hunchback_notre_dame_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_hunchback_notre_dame" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">19.55</field>
+            </record>
+            <record id="bookrepo_book_i_robot_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_i_robot" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">18.42</field>
+            </record>
+            <record id="bookrepo_book_iliad_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_iliad" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">15.54</field>
+            </record>
+            <record id="bookrepo_book_iliad_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_iliad" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">15.54</field>
+            </record>
+            <record id="bookrepo_book_iliad_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_iliad" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">18.18</field>
+            </record>
+            <record id="bookrepo_book_iliad_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_iliad" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">18.18</field>
+            </record>
+            <record id="bookrepo_book_killing_floor_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_killing_floor" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">22.27</field>
+            </record>
+            <record id="bookrepo_book_killing_floor_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_killing_floor" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">7.22</field>
+            </record>
+            <record id="bookrepo_book_killing_floor_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_killing_floor" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">13.28</field>
+            </record>
+            <record id="bookrepo_book_les_miserables_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_les_miserables" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">9.89</field>
+            </record>
+            <record id="bookrepo_book_les_miserables_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_les_miserables" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">9.89</field>
+            </record>
+            <record id="bookrepo_book_les_miserables_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_les_miserables" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">22.54</field>
+            </record>
+            <record id="bookrepo_book_les_miserables_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_les_miserables" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">22.54</field>
+            </record>
+            <record id="bookrepo_book_les_miserables_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_les_miserables" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">13.58</field>
+            </record>
+            <record id="bookrepo_book_les_miserables_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_les_miserables" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">13.58</field>
+            </record>
+            <record id="bookrepo_book_lord_rings_fellowship_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_lord_rings_fellowship" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">23.07</field>
+            </record>
+            <record id="bookrepo_book_lord_rings_fellowship_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_lord_rings_fellowship" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">23.07</field>
+            </record>
+            <record id="bookrepo_book_lord_rings_fellowship_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_lord_rings_fellowship" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">7.73</field>
+            </record>
+            <record id="bookrepo_book_lord_rings_fellowship_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_lord_rings_fellowship" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">7.73</field>
+            </record>
+            <record id="bookrepo_book_lord_rings_fellowship_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_lord_rings_fellowship" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">6.17</field>
+            </record>
+            <record id="bookrepo_book_lord_rings_fellowship_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_lord_rings_fellowship" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">6.17</field>
+            </record>
+            <record id="bookrepo_book_odyssey_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_odyssey" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">14.97</field>
+            </record>
+            <record id="bookrepo_book_odyssey_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_odyssey" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">14.97</field>
+            </record>
+            <record id="bookrepo_book_old_man_sea_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_old_man_sea" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">7.95</field>
+            </record>
+            <record id="bookrepo_book_old_man_sea_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_old_man_sea" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">18.17</field>
+            </record>
+            <record id="bookrepo_book_old_man_sea_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_old_man_sea" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">7.81</field>
+            </record>
+            <record id="bookrepo_book_oliver_twist_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_oliver_twist" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">8.86</field>
+            </record>
+            <record id="bookrepo_book_oliver_twist_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_oliver_twist" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">8.86</field>
+            </record>
+            <record id="bookrepo_book_pardaillan_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pardaillan" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">8.08</field>
+            </record>
+            <record id="bookrepo_book_pardaillan_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pardaillan" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">14.53</field>
+            </record>
+            <record id="bookrepo_book_pride_prejudice_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pride_prejudice" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">23.31</field>
+            </record>
+            <record id="bookrepo_book_pride_prejudice_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pride_prejudice" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">23.31</field>
+            </record>
+            <record id="bookrepo_book_pride_prejudice_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pride_prejudice" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">6.72</field>
+            </record>
+            <record id="bookrepo_book_pride_prejudice_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pride_prejudice" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">6.72</field>
+            </record>
+            <record id="bookrepo_book_pride_prejudice_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pride_prejudice" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">16.85</field>
+            </record>
+            <record id="bookrepo_book_pride_prejudice_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_pride_prejudice" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">16.85</field>
+            </record>
+            <record id="bookrepo_book_raven_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_raven" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">17.54</field>
+            </record>
+            <record id="bookrepo_book_romeo_juliet_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_romeo_juliet" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">6.85</field>
+            </record>
+            <record id="bookrepo_book_romeo_juliet_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_romeo_juliet" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">6.85</field>
+            </record>
+            <record id="bookrepo_book_romeo_juliet_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_romeo_juliet" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">10.78</field>
+            </record>
+            <record id="bookrepo_book_romeo_juliet_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_romeo_juliet" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">10.78</field>
+            </record>
+            <record id="bookrepo_book_romeo_juliet_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_romeo_juliet" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">22.03</field>
+            </record>
+            <record id="bookrepo_book_romeo_juliet_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_romeo_juliet" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">22.03</field>
+            </record>
+            <record id="bookrepo_book_shahnameh_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_shahnameh" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">11.35</field>
+            </record>
+            <record id="bookrepo_book_tale_two_cities_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_tale_two_cities" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">8.46</field>
+            </record>
+            <record id="bookrepo_book_tale_two_cities_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_tale_two_cities" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">8.46</field>
+            </record>
+            <record id="bookrepo_book_tale_two_cities_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_tale_two_cities" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">7.52</field>
+            </record>
+            <record id="bookrepo_book_tale_two_cities_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_tale_two_cities" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">7.52</field>
+            </record>
+            <record id="bookrepo_book_three_musketeers_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_three_musketeers" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">25.31</field>
+            </record>
+            <record id="bookrepo_book_three_musketeers_lib_main_depository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_three_musketeers" />
+                <field name="repository_id" ref="lib_main_depository" />
+                <field name="purchase_price">25.31</field>
+            </record>
+            <record id="bookrepo_book_war_peace_lib_main_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_war_peace" />
+                <field name="repository_id" ref="lib_main_repository" />
+                <field name="purchase_price">17.56</field>
+            </record>
+            <record id="bookrepo_book_war_peace_city_repository" model="openlibrary.book_repository">
+                <field name="book_edition_id" ref="book_war_peace" />
+                <field name="repository_id" ref="city_repository" />
+                <field name="purchase_price">17.56</field>
+            </record>
+
+            <!-- Subscribers -->
+            <!-- Add in hook inside file __init__.py -->
+
+    </data>
+</odoo>

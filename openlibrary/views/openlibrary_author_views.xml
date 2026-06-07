@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View openlibrary.author View List -->
+    <record id="view_openlibrary_author_list" model="ir.ui.view">
+        <field name="name">view.openlibrary.author.list</field>
+        <field name="model">openlibrary.author</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="pseudonym" placeholder="Pseudonym or Pen name or Nickname "/>
+                <field name="gender" />
+                <field name="nationality_id" />
+                <field name= "birthday" />
+                <field name="dieddate" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View openlibrary.author form -->
+    <record id="view_openlibrary_author_form" model="ir.ui.view">
+        <field name="name">view.openlibrary.author.form</field>
+        <field name="model">openlibrary.author</field>
+        <field name="arch" type="xml">
+            <form string="Authors">
+                <sheet>
+                    <header>
+                        <h1>
+                            <field name="display_name"/>
+                        </h1>
+                    </header>
+                    <group>
+                        <field name="name" placeholder="Name..."/>
+                        <field name="pseudonym" placeholder="Pseudonym or Pen name or Nickname "/>
+                        <field name="gender" />
+                        <field name="nationality_id" />
+                        <field name= "birthday" />
+                        <field name="dieddate" />
+                    </group>
+                    <notebook>
+                        <page name="group_bio" string="Biography">
+                            <field name= "biography"/>
+                        </page>
+                        <page name="group_books" string="Books">
+                            <field name= "book_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- View openlibrary.author search -->
+    <record id="view_openlibrary_author_search" model="ir.ui.view">
+        <field name="name">view.openlibrary.author.search</field>
+        <field name="model">openlibrary.author</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action openlibrary.author -->
+    <record id="action_openlibrary_author" model="ir.actions.act_window">
+        <field name="name">Authors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">openlibrary.author</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="path">authors</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Openlibrary Author.
+            </p>
+        </field>
+    </record>    
+</odoo>

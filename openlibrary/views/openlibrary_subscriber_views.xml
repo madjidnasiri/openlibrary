@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View openlibrary.subscriber View List -->
+    <record id="view_openlibrary_subscriber_list" model="ir.ui.view">
+        <field name="name">view.openlibrary.subscriber.list</field>
+        <field name="model">openlibrary.subscriber</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="partner_id" /> 
+                <field name="active" />
+                <field name="acceptable_day" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View openlibrary.subscriber form -->
+    <record id="view_openlibrary_subscriber_form" model="ir.ui.view">
+        <field name="name">view.openlibrary.subscriber.form</field>
+        <field name="model">openlibrary.subscriber</field>
+        <field name="arch" type="xml">
+            <form string="Subscribers">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <label for="name" string="Full Name: " invisible="not name" class="oe_edit_only"/>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="birthday" placeholder="Birthday"/>
+                        <field name="age" readonly="True"/>
+                        <field name="active" />
+                        <field name="acceptable_day" widget="integer" />
+                    </group>                    
+                    <notebook>
+                        <page name="subscriber_note" string="Note">
+                            <group>
+                                <field name="note" />
+                            </group>
+                        </page>
+                        <page name="subscriber_libraries" string="Libraries">
+                            <field name="membership_ids">
+                                <list>
+                                    <field name="library_id" />
+                                    <field name="status" />
+                                </list>
+                            </field>
+                        </page>
+                        <page name="subscriber_lends" string="Lents">
+                            <field name="lent_book_ids">
+                                <list>
+                                    <field name="status" />
+                                    <field name="book_repo_id" />
+                                    <field name="repository_id" />
+                                    <field name="start_date" />
+                                    <field name="return_date" />
+                                    <field name="days_late" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <!-- View openlibrary.subscriber search -->
+    <record id="view_openlibrary_subscriber_search" model="ir.ui.view">
+        <field name="name">view.openlibrary.subscriber.search</field>
+        <field name="model">openlibrary.subscriber</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action openlibrary.subscriber -->
+    <record id="action_openlibrary_subscriber" model="ir.actions.act_window">
+        <field name="name">Subscribers</field>
+        <field name="res_model">openlibrary.subscriber</field>
+        <field name="view_mode">list,form</field>
+        <field name="path">subscribers</field>
+    </record>
+</odoo>

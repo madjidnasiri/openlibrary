@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem name="Library" id="openlibrary.menu_root" sequence="10" web_icon="openlibrary,static/description/icon.png" />
+        <menuitem name="Repository Action" id="openlibrary_repos_actions_menu" parent="openlibrary.menu_root" sequence="10" />
+            <menuitem id="openlibrary_book_repository_menu" name="Books in repository" parent="openlibrary_repos_actions_menu" action="action_openlibrary_book_repository" sequence="10" />
+            <menuitem id="openlibrary_lend_menu" name="Lending Books" parent="openlibrary_repos_actions_menu" action="action_openlibrary_lend" sequence="20" />
+    
+        <menuitem name="Entities" id="openlibrary.menu_entities" parent="openlibrary.menu_root" sequence="20" />
+            <menuitem name="Publishers" id="openlibrary.menu_publisher_list" parent="openlibrary.menu_entities" action="openlibrary.action_publishers" sequence="10" />
+            <menuitem name="Authors" id="openlibrary.menu_authors" parent="openlibrary.menu_entities" action="action_openlibrary_author" sequence="20" />
+            <menuitem id="openlibrary.menu_book_list" name="Books" parent="openlibrary.menu_entities" action="action_openlibrary_book" sequence="30" />
+            <menuitem id="openlibrary_menu_bookedition" name="Book Editions" parent="openlibrary.menu_entities" action="action_openlibrary_bookedition" sequence="40" />
+            <menuitem name="Subscribers" id="openlibrary.menu_subscriber_list" parent="openlibrary.menu_entities" action="action_openlibrary_subscriber" sequence="50" />
+    
+        <menuitem name="Settings" id="openlibrary.menu_settings" parent="openlibrary.menu_root" sequence="100" />
+            <menuitem name="Libraries" id="openlibrary.menu_library_list" parent="openlibrary.menu_settings" action="action_openlibrary_library" sequence="10" />
+            <menuitem name="Tags" id="openlibrary_tag_menu" parent="openlibrary.menu_settings" action="action_openlibrary_tag" sequence="30" />
+</odoo>

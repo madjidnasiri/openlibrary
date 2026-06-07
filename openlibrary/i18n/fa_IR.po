@@ -1,0 +1,1557 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* openlibrary
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20251026\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-03 10:58+0000\n"
+"PO-Revision-Date: 2026-06-03 10:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "3 Days Late"
+msgstr "۳ روز تاخیر"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_return_book_wizard_form
+msgid ""
+"<i class=\"oi oi-warning\" title=\"Warning\" aria-label=\"Warning\"/>\n"
+"                            <span style=\"font-size: 16px;\">⚠️</span>\n"
+"                            <strong>Warning!</strong> \n"
+"                                This book is"
+msgstr ""
+"<i class=\"oi oi-warning\" title=\"هشدار\" aria-label=\"هشدار\"/>\n"
+"                            <span style=\"font-size: 16px;\">⚠️</span>\n"
+"                            <strong>هشدار!</strong> \n"
+"                                این کتاب"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                            If days late exceeds this, status is 'Dangerous Delay'\n"
+"                                        </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                            اگر روزهای تاخیر بیشتر از این مقدار باشد، وضعیت 'تاخیر خطرناک' خواهد بود\n"
+"                                        </small>"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                            If days late is less than or equal to this, status is 'Minor Delay'\n"
+"                                        </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                            اگر روزهای تاخیر کمتر یا مساوی این مقدار باشد، وضعیت 'تاخیر جزئی' خواهد بود\n"
+"                                        </small>"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_kanban
+msgid "<span class=\"badge badge-danger\">Double Overdue</span>"
+msgstr "<span class=\"badge badge-danger\">تاخیر مضاعف</span>"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_kanban
+msgid "<span class=\"badge badge-primary\">lended</span>"
+msgstr "<span class=\"badge badge-primary\">امانت رفته</span>"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_kanban
+msgid "<span class=\"badge badge-success\">Returned</span>"
+msgstr "<span class=\"badge badge-success\">بازگشت داده شده</span>"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_kanban
+msgid "<span class=\"badge badge-warning\">Overdue</span>"
+msgstr "<span class=\"badge badge-warning\">تاخیر دارد</span>"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__acceptable_day
+msgid "Acceptable number of days"
+msgstr "تعداد روزهای مجاز"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_needaction
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_needaction
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_needaction
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_needaction
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_needaction
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_needaction
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_needaction
+msgid "Action Needed"
+msgstr "اقدام مورد نیاز"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__active
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__active
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__active
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__active
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_membership__status__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+msgid "Active Books"
+msgstr "کتاب‌های فعال"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Active Lends"
+msgstr "امانت‌های فعال"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_exception_decoration
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_exception_decoration
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_exception_decoration
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_exception_decoration
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_exception_decoration
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_exception_decoration
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزئینات استثنای فعالیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_state
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_state
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_state
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_state
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_state
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_state
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_state
+msgid "Activity State"
+msgstr "وضعیت فعالیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_type_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_type_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_type_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_type_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_type_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_type_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکون نوع فعالیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__address
+msgid "Address"
+msgstr "آدرس"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__subscriber_due_day
+msgid "Allowed Days"
+msgstr "روزهای مجاز"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_list
+msgid "Are you sure you want to recalculate all computed fields?"
+msgstr "آیا مطمئن هستید که می‌خواهید تمام فیلدهای محاسباتی را مجدداً محاسبه کنید؟"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_attachment_count
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_attachment_count
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_attachment_count
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_attachment_count
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_attachment_count
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_attachment_count
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد پیوست‌ها"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_author
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__author_ids
+#: model:ir.ui.menu,name:openlibrary.menu_authors
+#: model_terms:ir.ui.view,arch_db:openlibrary.author_index
+#: model_terms:ir.ui.view,arch_db:openlibrary.index
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_author_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+msgid "Authors"
+msgstr "نویسندگان"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+msgid "Available Books"
+msgstr "کتاب‌های موجود"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__biography
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_author_form
+msgid "Biography"
+msgstr "بیوگرافی"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__birthday
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+msgid "Birthday"
+msgstr "تاریخ تولد"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__book_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__book_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__book_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__book_repo_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__book_repo_id
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_bookedition_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Book"
+msgstr "کتاب"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__book_edition_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__book_edition_id
+msgid "Book Edition"
+msgstr "نسخه کتاب"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__book_repo_id
+msgid "Book Edition/Repository"
+msgstr "نسخه کتاب/مخزن"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_bookedition
+#: model:ir.ui.menu,name:openlibrary.openlibrary_menu_bookedition
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_bookedition_form
+msgid "Book Editions"
+msgstr "نسخه‌های کتاب"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid "Book Library"
+msgstr "کتابخانه کتاب"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__book_edition_ids
+msgid "Book Prints"
+msgstr "چاپ‌های کتاب"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__book_status
+msgid "Book Status"
+msgstr "وضعیت کتاب"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_book
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__book_ids
+#: model:ir.ui.menu,name:openlibrary.menu_book_list
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_author_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_library_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_repository_form
+msgid "Books"
+msgstr "کتاب‌ها"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_book_repository
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_form
+msgid "Books in Repositories"
+msgstr "کتاب‌ها در مخازن"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_list
+msgid "Books in Repository"
+msgstr "کتاب‌های موجود در مخزن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__book_repo_ids
+#: model:ir.ui.menu,name:openlibrary.openlibrary_book_repository_menu
+msgid "Books in repository"
+msgstr "کتاب‌های موجود در مخزن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__birthday
+msgid "Born Date"
+msgstr "تاریخ تولد"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.book_lending_wizard_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.book_repository_repeat_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_return_book_wizard_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_form
+msgid "Close"
+msgstr "بستن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__code
+msgid "Code"
+msgstr "کد"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__company_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__company_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_res_config_settings
+msgid "Config Settings"
+msgstr "تنظیمات پیکربندی"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_res_partner
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__partner_id
+msgid "Contact"
+msgstr "مخاطب"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.book_repository_repeat_form
+msgid "Create"
+msgstr "ایجاد"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/book_repository.py:0
+msgid "Create Multi Book from ..."
+msgstr "ایجاد چند کتاب از ..."
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__create_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__create_uid
+msgid "Created by"
+msgstr "ایجاد شده توسط"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__create_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__currency_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__currency_id
+msgid "Currency"
+msgstr "واحد پول"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__current_lend_id
+msgid "Current Lend"
+msgstr "امانت جاری"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Day Late"
+msgstr "تاخیر روزانه"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Delaies"
+msgstr "تاخیرها"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__days_late
+msgid "Delay"
+msgstr "تاخیر"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__days_late
+msgid "Delay Days"
+msgstr "روزهای تاخیر"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid "Delay Localization"
+msgstr "محلی‌سازی تاخیر"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+msgid "Delayed Books"
+msgstr "کتاب‌های تاخیردار"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__description
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_bookedition_form
+msgid "Description"
+msgstr "توضیحات"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__dieddate
+msgid "Died Date"
+msgstr "تاریخ فوت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:openlibrary.field_res_partner__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__due_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__due_date
+msgid "Due Date"
+msgstr "تاریخ سررسید"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__edition
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_bookedition_form
+msgid "Edition"
+msgstr "نسخه"
+
+#. module: openlibrary
+#: model:ir.ui.menu,name:openlibrary.menu_entities
+msgid "Entities"
+msgstr "موجودیت‌ها"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_author__gender__female
+msgid "Female"
+msgstr "زن"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/lend.py:0
+msgid "Fields recalculated successfully."
+msgstr "فیلدها با موفقیت بازمحاسبه شدند."
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_follower_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_follower_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_follower_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_follower_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_follower_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_follower_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_partner_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_partner_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_partner_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_partner_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_partner_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_partner_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (همکاران)"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__activity_type_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__activity_type_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__activity_type_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__activity_type_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__activity_type_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__activity_type_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکون Font Awesome مانند fa-tasks"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+msgid "Full Name:"
+msgstr "نام کامل:"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__gender
+msgid "Gender"
+msgstr "جنسیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__has_message
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__has_message
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__has_message
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__has_message
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__has_message
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__has_message
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__id
+#: model:ir.model.fields,field_description:openlibrary.field_res_config_settings__id
+#: model:ir.model.fields,field_description:openlibrary.field_res_partner__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.ws_author_view
+msgid "ID:"
+msgstr "شناسه:"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_exception_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_exception_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_exception_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_exception_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_exception_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_exception_icon
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_exception_icon
+msgid "Icon"
+msgstr "آیکون"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__activity_exception_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__activity_exception_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__activity_exception_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__activity_exception_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__activity_exception_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__activity_exception_icon
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکون برای نشان دادن فعالیت استثنایی."
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__message_needaction
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__message_needaction
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__message_needaction
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__message_needaction
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__message_needaction
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__message_needaction
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "اگر فعال باشد، پیام‌های جدید نیاز به توجه شما دارند."
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__message_has_sms_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__message_has_sms_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__message_has_sms_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__message_has_sms_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__message_has_sms_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__message_has_sms_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__message_has_error
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "اگر فعال باشد، برخی پیام‌ها خطای تحویل دارند."
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_res_config_settings__delay_suspicious_threshold
+msgid "If days late exceeds this, status is 'Dangerous Delay'"
+msgstr "اگر روزهای تاخیر بیشتر از این باشد، وضعیت 'تاخیر خطرناک' خواهد بود"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_res_config_settings__delay_warning_threshold
+msgid "If days late is less than or equal to this, status is 'Delay'"
+msgstr "اگر روزهای تاخیر کمتر یا مساوی این باشد، وضعیت 'تاخیر' خواهد بود"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_membership__status__inactive
+msgid "Inactive"
+msgstr "غیرفعال"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+msgid "Inactive Books"
+msgstr "کتاب‌های غیرفعال"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_is_follower
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_is_follower
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_is_follower
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_is_follower
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_is_follower
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_is_follower
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__is_lent
+msgid "Is lent"
+msgstr "امانت رفته است"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__join_date
+msgid "Join Date"
+msgstr "تاریخ پیوستن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__last_delay_update
+msgid "Last Delay Update"
+msgstr "آخرین به‌روزرسانی تاخیر"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.ws_author_view
+msgid "Last Modify:"
+msgstr "آخرین ویرایش:"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__write_uid
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخرین به‌روزرسانی توسط"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__write_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخرین به‌روزرسانی در"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.book_lending_wizard_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_list
+msgid "Lend"
+msgstr "امانت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__start_date
+msgid "Lend Date"
+msgstr "تاریخ امانت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__lend_id
+msgid "Lend Record"
+msgstr "رکورد امانت"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/book_repository.py:0
+msgid "Lending Book ..."
+msgstr "امانت کتاب ..."
+
+#. module: openlibrary
+#: model:ir.ui.menu,name:openlibrary.openlibrary_lend_menu
+msgid "Lending Books"
+msgstr "کتاب‌های امانت رفته"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__lend_date
+msgid "Lending Date"
+msgstr "تاریخ امانت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__lend_ids
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_form
+msgid "Lending History"
+msgstr "تاریخچه امانت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__lent_book_ids
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+msgid "Lent Books"
+msgstr "کتاب‌های امانت رفته"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_lend
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+msgid "Lents"
+msgstr "امانت‌ها"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.book_repository_repeat_form
+msgid "Let me make a few more of these:"
+msgstr "اجازه دهید چند تا دیگر از اینها بسازم:"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_library
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__library_ids
+#: model:ir.ui.menu,name:openlibrary.menu_library_list
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_library_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+msgid "Libraries"
+msgstr "کتابخانه‌ها"
+
+#. module: openlibrary
+#: model:res.groups,name:openlibrary.group_libraries_director
+msgid "Libraries Director"
+msgstr "مدیر کتابخانه‌ها"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__library_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__library_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__library_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__library_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__library_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__library_id
+#: model:ir.ui.menu,name:openlibrary.menu_root
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_partner_form_inh
+msgid "Library"
+msgstr "کتابخانه"
+
+#. module: openlibrary
+#: model:res.groups,name:openlibrary.group_library_content_manager
+msgid "Library Content Manager"
+msgstr "مدیر محتوای کتابخانه"
+
+#. module: openlibrary
+#: model:res.groups,name:openlibrary.group_library_employee
+msgid "Library Employee"
+msgstr "کارمند کتابخانه"
+
+#. module: openlibrary
+#: model:res.groups,name:openlibrary.group_library_manager
+msgid "Library Manager"
+msgstr "مدیر کتابخانه"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_membership
+msgid "Library Membership"
+msgstr "عضویت در کتابخانه"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__membership_ids
+msgid "Library Memberships"
+msgstr "عضویت‌های کتابخانه"
+
+#. module: openlibrary
+#: model:res.groups,name:openlibrary.group_library_user
+msgid "Library User"
+msgstr "کاربر کتابخانه"
+
+#. module: openlibrary
+#: model:ir.module.category,name:openlibrary.category_library
+msgid "Library category"
+msgstr "دسته کتابخانه"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_author__gender__male
+msgid "Male"
+msgstr "مرد"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Members and books"
+msgstr "اعضا و کتاب‌ها"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_library_form
+msgid "Memberships"
+msgstr "عضویت‌ها"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_has_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_has_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_has_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_has_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_has_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_has_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای تحویل پیام"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Month Late"
+msgstr "تاخیر ماهانه"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__my_activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__my_activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__my_activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__my_activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__my_activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__my_activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__name
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_tag__name
+msgid "Name"
+msgstr "نام"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_author_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_library_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_repository_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_tag_form
+msgid "Name..."
+msgstr "نام..."
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__nationality_id
+msgid "Nationality"
+msgstr "ملیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_date_deadline
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_summary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_summary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_summary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_summary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_summary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_summary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_type_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_type_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_type_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_type_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_type_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_type_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.book_list
+#: model_terms:ir.ui.view,arch_db:openlibrary.ws_author_list
+msgid "No Record Found"
+msgstr "رکوردی یافت نشد"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__note
+msgid "Node"
+msgstr "یادداشت"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+msgid "Note"
+msgstr "یادداشت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__number
+msgid "Number"
+msgstr "تعداد"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_needaction_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_needaction_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_needaction_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_needaction_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_needaction_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_needaction_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_has_error_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_has_error_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_has_error_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_has_error_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_has_error_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_has_error_counter
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__message_needaction_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__message_needaction_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__message_needaction_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__message_needaction_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__message_needaction_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__message_needaction_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__message_has_error_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__message_has_error_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__message_has_error_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__message_has_error_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__message_has_error_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__message_has_error_counter
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای تحویل"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__status_sequence
+msgid "Numerical order for kanban grouping"
+msgstr "ترتیب عددی برای گروه‌بندی کانبان"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Old Records"
+msgstr "رکوردهای قدیمی"
+
+#. module: openlibrary
+#: model:res.groups.privilege,name:openlibrary.res_groups_privilege_openlibrary
+msgid "Open Library"
+msgstr "کتابخانه باز"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid "Open Library Settings"
+msgstr "تنظیمات کتابخانه باز"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_lend
+msgid "Open Library: Lending"
+msgstr "کتابخانه باز: امانت"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_author
+msgid "OpenLibrary: Author"
+msgstr "کتابخانه باز: نویسنده"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_book
+msgid "OpenLibrary: Book Information and Summury"
+msgstr "کتابخانه باز: اطلاعات و خلاصه کتاب"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_bookedition
+msgid "OpenLibrary: Book edition"
+msgstr "کتابخانه باز: نسخه کتاب"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_book_repository
+msgid "OpenLibrary: Book in Repository"
+msgstr "کتابخانه باز: کتاب در مخزن"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_lend_wizard
+msgid "OpenLibrary: Lend Wizard"
+msgstr "کتابخانه باز: ویزارد امانت"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_library
+msgid "OpenLibrary: Library Information "
+msgstr "کتابخانه باز: اطلاعات کتابخانه"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_repository
+msgid "OpenLibrary: Library Repository"
+msgstr "کتابخانه باز: مخزن کتابخانه"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_publisher
+msgid "OpenLibrary: Publisher Information"
+msgstr "کتابخانه باز: اطلاعات ناشر"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_return_book_wizard
+msgid "OpenLibrary: Return Book Wizard"
+msgstr "کتابخانه باز: ویزارد بازگشت کتاب"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_subscriber
+msgid "OpenLibrary: Subscriber"
+msgstr "کتابخانه باز: عضو"
+
+#. module: openlibrary
+#: model:ir.actions.server,name:openlibrary.ir_cron_update_delay_days_ir_actions_server
+msgid "OpenLibrary: Update Delay Days"
+msgstr "کتابخانه باز: به‌روزرسانی روزهای تاخیر"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_wizard
+msgid "OpenLibrary: Wizard"
+msgstr "کتابخانه باز: ویزارد"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_library_form
+msgid "Openlibrary Repository"
+msgstr "مخزن کتابخانه باز"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_return_book_wizard_form
+msgid "Openlibrary | Return Book"
+msgstr "کتابخانه باز | بازگشت کتاب"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__owner
+msgid "Owner"
+msgstr "مالک"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__purchase_price
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__price
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__purchase_price
+msgid "Price"
+msgstr "قیمت"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+msgid "Prints"
+msgstr "چاپ‌ها"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__pseudonym
+msgid "Pseudonym"
+msgstr "نام مستعار"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_author_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_author_list
+msgid "Pseudonym or Pen name or Nickname"
+msgstr "نام مستعار یا قلم"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__publish_date
+msgid "Publish Date"
+msgstr "تاریخ انتشار"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__publisher_id
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_bookedition_form
+msgid "Publisher"
+msgstr "ناشر"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_bookedition__publisher_name
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_bookedition_form
+msgid "Publisher Name"
+msgstr "نام ناشر"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_publishers
+#: model:ir.ui.menu,name:openlibrary.menu_publisher_list
+msgid "Publishers"
+msgstr "ناشران"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__rating_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__rating_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__rating_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__rating_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__rating_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__rating_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__rating_ids
+msgid "Ratings"
+msgstr "امتیازات"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_list
+msgid "Recompute Fields"
+msgstr "بازمحاسبه فیلدها"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_form
+msgid "Repeat Book"
+msgstr "تکرار کتاب"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_library_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_repository_form
+msgid "Repositories"
+msgstr "مخازن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__repository_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__repository_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__repository_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_wizard__repository_id
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Repository"
+msgstr "مخزن"
+
+#. module: openlibrary
+#: model:ir.ui.menu,name:openlibrary.openlibrary_repos_actions_menu
+msgid "Repository Action"
+msgstr "اقدام مخزن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__repository_type
+msgid "Repository Type"
+msgstr "نوع مخزن"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__activity_user_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__activity_user_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__activity_user_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__activity_user_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__activity_user_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__activity_user_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_list
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_form
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_return_book_wizard_form
+msgid "Return"
+msgstr "بازگشت"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/book_repository.py:0
+#: code:addons/openlibrary/models/lend.py:0
+msgid "Return Book"
+msgstr "بازگشت کتاب"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__return_date
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__return_date
+msgid "Return Date"
+msgstr "تاریخ بازگشت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__message_has_sms_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__message_has_sms_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__message_has_sms_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__message_has_sms_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__message_has_sms_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__message_has_sms_error
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای تحویل پیامک"
+
+#. module: openlibrary
+#: model:ir.ui.menu,name:openlibrary.menu_settings
+msgid "Settings"
+msgstr "تنظیمات"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Show only books that are not returned yet"
+msgstr "نمایش فقط کتاب‌هایی که هنوز برگشت داده نشده‌اند"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__start_date
+msgid "Start Date"
+msgstr "تاریخ شروع"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__status
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__status
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__status
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_repository_search
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__status_sequence
+msgid "Status Sequence"
+msgstr "ترتیب وضعیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__activity_state
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__activity_state
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__activity_state
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__activity_state
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__activity_state
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__activity_state
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"وضعیت بر اساس فعالیت‌ها\n"
+"تاخیر خورده: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"برنامه‌ریزی شده: فعالیت‌های آینده."
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__subtitle
+msgid "Sub Title"
+msgstr "زیرعنوان"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__subscriber_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend_wizard__subscriber_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_membership__subscriber_id
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__subscriber_id
+#: model:ir.model.fields,field_description:openlibrary.field_res_partner__subscriber_id
+#: model:ir.model.fields,field_description:openlibrary.field_res_users__subscriber_id
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_partner_form_inh
+msgid "Subscriber"
+msgstr "عضو"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_return_book_wizard__subscriber_due_day
+msgid "Subscriber Due Day"
+msgstr "روز مجاز عضو"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__membership_ids
+msgid "Subscriber Memberships"
+msgstr "عضویت‌های اعضا"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/subscriber.py:0
+msgid "Subscriber cannt has small of 7 old year"
+msgstr "عضو نمی‌تواند کمتر از 7 سال سن داشته باشد"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_subscriber
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__subscriber_ids
+#: model:ir.ui.menu,name:openlibrary.menu_subscriber_list
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_subscriber_form
+msgid "Subscribers"
+msgstr "اعضا"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/subscriber.py:0
+msgid "Subscribers birthday dont enter"
+msgstr "تاریخ تولد عضو وارد نشده است"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/lend.py:0
+msgid "Success"
+msgstr "موفقیت"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__summary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+msgid "Summary"
+msgstr "خلاصه"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_membership__status__suspended
+msgid "Suspended"
+msgstr "تعلیق شده"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_res_config_settings__delay_suspicious_threshold
+msgid "Suspicious Delay (Days)"
+msgstr "تاخیر مشکوک (روز)"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid "Suspicious Delay Threshold (Days)"
+msgstr "آستانه تاخیر مشکوک (روز)"
+
+#. module: openlibrary
+#: model:ir.model,name:openlibrary.model_openlibrary_tag
+msgid "Tag for books and authors"
+msgstr "برچسب برای کتاب‌ها و نویسندگان"
+
+#. module: openlibrary
+#: model:ir.actions.act_window,name:openlibrary.action_openlibrary_tag
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__tag_ids
+#: model:ir.ui.menu,name:openlibrary.openlibrary_tag_menu
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_tag_form
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_author
+msgid "There is no examples click here to add new Openlibrary Author."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن نویسنده جدید کلیک کنید."
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_book
+msgid "There is no examples click here to add new Openlibrary Book."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن کتاب جدید کلیک کنید."
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_book_repository
+msgid ""
+"There is no examples click here to add new Openlibrary Book_repository."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن مخزن کتاب جدید کلیک کنید."
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_library
+msgid "There is no examples click here to add new Openlibrary Library."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن کتابخانه جدید کلیک کنید."
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_tag
+msgid "There is no examples click here to add new Openlibrary Tag."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن برچسب جدید کلیک کنید."
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_bookedition
+msgid "There is no examples click here to add new Openlibrary bookedition."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن نسخه کتاب جدید کلیک کنید."
+
+#. module: openlibrary
+#: model_terms:ir.actions.act_window,help:openlibrary.action_openlibrary_lend
+msgid "There is no examples click here to add new Openlibrary lend."
+msgstr "هیچ نمونه‌ای وجود ندارد. برای افزودن امانت جدید کلیک کنید."
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/book_repository.py:0
+#: code:addons/openlibrary/models/lend.py:0
+msgid "This book is not currently lent!"
+msgstr "این کتاب در حال حاضر امانت رفته نیست!"
+
+#. module: openlibrary
+#. odoo-python
+#: code:addons/openlibrary/models/library_membership.py:0
+msgid "This subscriber is already a member of this library!"
+msgstr "این عضو قبلاً عضو این کتابخانه است!"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__title
+msgid "Title"
+msgstr "عنوان"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_book_form
+msgid "Title..."
+msgstr "عنوان..."
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_repository__type
+msgid "Type"
+msgstr "نوع"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__activity_exception_decoration
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__activity_exception_decoration
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__activity_exception_decoration
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__activity_exception_decoration
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__activity_exception_decoration
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__activity_exception_decoration
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی در رکورد."
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__responsible_user_id
+msgid "User"
+msgstr "کاربر"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_res_config_settings__delay_warning_threshold
+msgid "Warning Delay (Days)"
+msgstr "تاخیر هشدار (روز)"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.res_config_settings_view_form
+msgid "Warning Delay Threshold (Days)"
+msgstr "آستانه تاخیر هشدار (روز)"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_author__website_message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book__website_message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_book_repository__website_message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_lend__website_message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_library__website_message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_publisher__website_message_ids
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های وبسایت"
+
+#. module: openlibrary
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_author__website_message_ids
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book__website_message_ids
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_book_repository__website_message_ids
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_lend__website_message_ids
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_library__website_message_ids
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_publisher__website_message_ids
+#: model:ir.model.fields,help:openlibrary.field_openlibrary_subscriber__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات وبسایت"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_search
+msgid "Week Late"
+msgstr "تاخیر هفتگی"
+
+#. module: openlibrary
+#: model:ir.model.fields,field_description:openlibrary.field_openlibrary_subscriber__age
+msgid "age"
+msgstr "سن"
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_return_book_wizard_form
+msgid "day(s) past due date. A late fee may apply."
+msgstr "روز از تاریخ سررسید گذشته است. ممکن است جریمه تاخیر اعمال شود."
+
+#. module: openlibrary
+#: model_terms:ir.ui.view,arch_db:openlibrary.view_openlibrary_lend_calendar
+msgid "lending Calender"
+msgstr "تقویم امانت"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_repository__type__2
+msgid "🏛️ Depository"
+msgstr "🏛️ مخزن سپرده"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_repository__type__4
+msgid "👑 Treasure"
+msgstr "👑 گنجینه"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_book_repository__status__dangerous
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status__dangerous
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status_sequence__10
+msgid "📓 Dangerous Delay"
+msgstr "📓 تاخیر خطرناک"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_book_repository__status__suspicious
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status__suspicious
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status_sequence__20
+msgid "📕 Suspicious Delay"
+msgstr "📕 تاخیر مشکوک"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_book_repository__status__lent
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status__lent
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status_sequence__40
+msgid "📗 Lent"
+msgstr "📗 امانت رفته"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_book_repository__status__free
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status__free
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status_sequence__50
+msgid "📘 Free"
+msgstr "📘 آزاد"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_book_repository__status__delay
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status__delay
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_lend__status_sequence__30
+msgid "📙 Delay"
+msgstr "📙 تاخیر"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_repository__type__1
+msgid "📚 Normal"
+msgstr "📚 معمولی"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_repository__type__8
+msgid "📦 Archive"
+msgstr "📦 آرشیو"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_repository__type__3
+msgid "🔍 Reference"
+msgstr "🔍 مرجع"
+
+#. module: openlibrary
+#: model:ir.model.fields.selection,name:openlibrary.selection__openlibrary_repository__type__9
+msgid "🗄️ Others"
+msgstr "🗄️ سایر"
