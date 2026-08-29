@@ -7,9 +7,10 @@ class OpenLibrary(http.Controller):
     def index(self, **kw):
         return "Hello, world"
 
-    @http.route('/open_library/author', auth='public')
-    def index_authors(self, **kw):
-        return http.request.render('openlibrary.author_index', { "authors": ["Arthor C. Clark", "Isac Asimuf", "Jack London"] })
+    @http.route('/books/status', auto='public', website=True)
+    def book_status_in_website(self, **kw):
+        Books = http.request.env['openlibrary.book_repository']
+        return http.request.render('openlibrary.book_repositories_public_user', {'books': Books.search([])})
 
     @http.route('/open_library/ws_authors', auto='public', website=True)
     def index_website_authors(self, **kw):

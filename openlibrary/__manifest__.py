@@ -20,7 +20,7 @@ Features:
 * Multi-company support
     """,    
     'author': "Madjid Nasiri",
-    'website': "https://www.afsannama.ir",
+    'website': "https://www.1dana.com",
     'installable': True,
     'application': True,
     'auto_install': False,
@@ -61,6 +61,7 @@ Features:
         "views/openlibrary_repository_views.xml",
         "views/openlibrary_subscriber_views.xml",
         "views/openlibrary_tag_views.xml",
+        "views/openlibrary_tag_report_views.xml",
         "views/openlibrary_wizard_views.xml",
         "views/res_config_settings_views.xml",
         "views/templates.xml",

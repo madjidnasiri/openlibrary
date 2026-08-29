@@ -14,3 +14,5 @@ from . import library_membership
 from . import wizard
 from . import lend_wizard
 from . import res_config_settings
+from . import tagsreport
+

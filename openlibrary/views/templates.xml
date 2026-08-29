@@ -1,24 +1,5 @@
 <odoo>
     <data>
-        <template id="index">
-          <h1>Authors</h1>        
-          <t t-foreach="objects" t-as="object">
-            <p><t t-esc="object"/></p>
-          </t>
-        </template>
-
-        <template id="author_index">
-          <title>Authors</title>
-          <h1>Authors</h1>
-          <hr/>
-          <ul>
-          <li t-foreach="authors" t-as="author">
-            <t t-esc="author"/>
-          </li>
-          </ul>
-          <hr/>
-        </template>
-
         <template id="ws_author_list">
           <t t-call="website.layout">
             <t t-set="title" t-value="Authors"/>
@@ -44,12 +25,6 @@
               </div>
               <hr/>
           </t>
-
-          <!-- <ul>
-            <li t-foreach="authors" t-as="author">
-              <t t-esc="author.name"/> <t t-esc="author.family"/>
-            </li>
-          </ul> -->
         </template>
 
         <template id="ws_author_view">
@@ -69,39 +44,43 @@
           </t>
         </template>
 
-        <template id="book_list">
-          <t t-set="title" t-value="Books"/>
-          <hr/>
+        <template id="book_repositories_public_user">
+          <t t-call="website.layout">
+            <t t-set="Title" t-value="'Books status'"/>
             <div class="oe_structure">
               <div class="container">
+                <h1>Books in repository</h1>
+                <hr/>
                 <t t-if="books">
-                  <t t-foreach="books" t-as="book">
-                    <p>
-                      <t t-esc="book.id"/> |
-                      <snap>
-                      <a t-attf-href="/ol/author/{{ slug(author) }}">
-                        <t t-esc="author.name"/> <t t-esc="author.family"/>
-                      </a>
-                      </snap>
-                    </p>
-                  </t>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Library/Repository</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <t t-set="row_no" t-value="0"/>
+                      <t t-foreach="books" t-as="book">
+                        <t t-set="row_no" t-value="row_no + 1"/>
+                        <tr t-attf-class="{'table-secondary': row_no % 2 == 0}">
+                          <td><t t-esc="book.id"/></td>
+                          <td><t t-esc="book.name"/></td>
+                          <td><t t-esc="book.repository_id.display_name"/></td>
+                          <td><t t-esc="book.status"/></td>
+                        </tr>
+                      </t>
+                    </tbody>
+                  </table>
                 </t>
                 <t t-else="">
                   <p>No Record Found</p>
                 </t>
               </div>
             </div>
-            <hr/>
-        </template>
-
-        <template id="listing_books">
-          <ul>
-            <li t-foreach="books" t-as="book">
-              <a t-attf-href="#{ root }/books/#{ book.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
+          </t>
         </template>
 
 <!--

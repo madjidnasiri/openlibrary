@@ -11,6 +11,10 @@
             <menuitem id="openlibrary.menu_book_list" name="Books" parent="openlibrary.menu_entities" action="action_openlibrary_book" sequence="30" />
             <menuitem id="openlibrary_menu_bookedition" name="Book Editions" parent="openlibrary.menu_entities" action="action_openlibrary_bookedition" sequence="40" />
             <menuitem name="Subscribers" id="openlibrary.menu_subscriber_list" parent="openlibrary.menu_entities" action="action_openlibrary_subscriber" sequence="50" />
+        
+        <menuitem name="Reports" id="openlibrary.menu_reports" parent="openlibrary.menu_root" sequence="30" />
+            <menuitem name="Tags Report" id="openlibrary_tag_report_menu" parent="openlibrary.menu_reports" action="action_openlibrary_tags_reports" sequence="10" />
+            <menuitem id="menu_openlibrary_tag_dashboard" name="Tags Dashboard" parent="openlibrary.menu_reports" action="action_openlibrary_tag_dashboard" sequence="20"/>
     
         <menuitem name="Settings" id="openlibrary.menu_settings" parent="openlibrary.menu_root" sequence="100" />
             <menuitem name="Libraries" id="openlibrary.menu_library_list" parent="openlibrary.menu_settings" action="action_openlibrary_library" sequence="10" />

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_openlibrary_tag_report_list" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.list</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <list string="Tags Report">
+                <field name="tag_id"/>
+                <field name="book_repo_count"/>
+                <field name="available_count"/>
+                <field name="lent_now_count"/>
+                <field name="lent_now_percentage" widget="percentage"/>
+                <field name="ever_lent_copies"/>
+                <field name="total_lend_count"/>
+                <field name="ever_lent_percentage" widget="percentage"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_openlibrary_tag_report_graph" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.graph</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <graph string="Tags Rent Report" type="pie">
+                <field name="tag_id" type="row"/>
+                <field name="lent_now_percentage" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_openlibrary_tag_report_graph_genre" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.graph.genre</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <graph string="Number of books by genre" type="pie">
+                <field name="tag_id" type="row"/>
+                <field name="book_repo_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_openlibrary_tag_report_graph_lent" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.graph.lent</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <graph string="Loaned books by genre" type="pie">
+                <field name="tag_id" type="row"/>
+                <field name="total_lend_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_openlibrary_tag_report_graph_bar" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.graph.bar</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <graph string="Available books by genre" type="bar">
+                <field name="tag_id" type="row"/>
+                <field name="available_count" type="measure"/>
+            </graph>
+        </field>
+    </record>    
+
+    <record id="view_openlibrary_tag_report_pivot" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.pivot</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Tags Report" >
+                <field name="tag_id" type="row"/>
+                <field name="book_repo_count" type="measure"/>
+                <field name="available_count" type="measure"/>
+                <field name="lent_now_count" type="measure"/>
+                <field name="lent_now_percentage" type="measure"/>
+                <field name="ever_lent_copies" type="measure"/>
+                <field name="total_lend_count" type="measure"/>
+                <field name="ever_lent_percentage" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- <record id="view_openlibrary_tag_dashboard" model="ir.ui.view">
+        <field name="name">openlibrary.tag.dashboard</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <dashboard>
+                <view type="graph" name="📊 Number of books by genre" ref="view_openlibrary_tag_report_graph_genre"/>
+                <view type="graph" name="📈 Loaned books by genre"  ref="view_openlibrary_tag_report_graph_lent"/>
+                <view type="graph" name="📊 Books in the repository" ref="view_openlibrary_tag_report_graph_bar"/>
+            </dashboard>
+        </field>
+    </record> -->
+
+    <record id="view_openlibrary_tag_dashboard" model="ir.ui.view">
+        <field name="name">openlibrary.tag.report.form</field>
+        <field name="model">openlibrary.tag.report</field>
+        <field name="arch" type="xml">
+            <form string="Tag Report">
+                <sheet>
+                    <div class="row">
+                        <div class="col-6">
+                            <widget name="graph" 
+                                    string="Books by Genre" 
+                                    graph_type="pie"
+                                    domain="[]"
+                                    fields='{
+                                        "tag_id": {"type": "row"}, 
+                                        "book_repo_count": {"type": "measure"}
+                                    }'/>
+                        </div>
+                        <div class="col-6">
+                            <widget name="graph" 
+                                    string="Books Lent by Genre" 
+                                    graph_type="pie"
+                                    domain="[]"
+                                    fields='{
+                                        "tag_id": {"type": "row"}, 
+                                        "total_lend_count": {"type": "measure"}
+                                    }'/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <widget name="graph" 
+                                    string="Available Books by Genre" 
+                                    graph_type="bar"
+                                    domain="[]"
+                                    fields='{
+                                        "tag_id": {"type": "row"}, 
+                                        "available_count": {"type": "measure"},
+                                        "total_lend_count": {"type": "measure"}
+                                    }'/>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Actions openlibrary.tags_reports -->
+    <record id="action_openlibrary_tags_reports" model="ir.actions.act_window">
+        <field name="name">Tags Reports</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">openlibrary.tag.report</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="views" eval="[
+            (ref('view_openlibrary_tag_report_graph'), 'graph'),
+            (ref('view_openlibrary_tag_report_pivot'), 'pivot'),
+            (ref('view_openlibrary_tag_report_list'), 'list')
+        ]"/>                               
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="path">tags-report</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Openlibrary Tag.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_openlibrary_tag_dashboard" model="ir.actions.act_window">
+        <field name="name">Tags Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">openlibrary.tag.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_openlibrary_tag_dashboard"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Dashboard for tag statistics and reports.
+            </p>
+        </field>
+    </record>
+</odoo>
